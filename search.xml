@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>01背包</title>
+    <url>/2019/11/21/01%E8%83%8C%E5%8C%85/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p> 有 n 件物品和容量是 V 的背包。每件物品只能取一次。每件物品有自<br> 己的体积和价值。在不超过背包容积的状态下，问背包能够容纳的最大<br> 价值是多少？</p>
+<p> <strong>输入格式</strong><br> 第一行两个整数 n,v,分别代表物品的数量和背包的容积。接下来 n行,<br> 每行两个整数，分别代表物品的体积和价值</p>
+<p> <strong>输出格式</strong><br> 输出一个整数，表示最大价值。</p>
+<p> <strong>数据范围</strong><br> 0 &lt; N,V&lt;= 1000;<br> 0 &lt; w, value &lt;= 1000;</p>
+<p><strong>输入样例</strong><br>4 5<br>1 2<br>2 4<br>3 4<br>4 5</p>
+<p><strong>输出样例</strong><br>8</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="确定状态"><a href="#确定状态" class="headerlink" title="确定状态"></a>确定状态</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dp[i][j]:表示前i个物品体积为j的背包,能够容纳价值多大的商品。</div></pre></td></tr></table></figure>
+<h2 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">如果背包当前体积小于物品的体积，就不选这个物品，即:</div><div class="line">--&gt;  dp[i][j] = dp[i-1][j];</div><div class="line">如果背包当前体积大于或等于物品的体积,就选择这个物品,即:</div><div class="line">--&gt;  dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i]]+value[i])</div><div class="line">dp[i-1][j]的含义：前 i- 1个物品放入容量为j的背包所能够容纳的</div><div class="line">最大价值。</div><div class="line">dp[i-1][j-w[i]]+value[i]含义:前 i - 1个物品放入容量为j-w[i]</div><div class="line">的背包所能够容纳的最大价值。</div></pre></td></tr></table></figure>
+<h2 id="确定编码实现方式"><a href="#确定编码实现方式" class="headerlink" title="确定编码实现方式"></a>确定编码实现方式</h2><h3 id="未优化代码：二维数组的实现"><a href="#未优化代码：二维数组的实现" class="headerlink" title="未优化代码：二维数组的实现"></a>未优化代码：二维数组的实现</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int n,v;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int dp[maxn][maxn];</div><div class="line">int mian()</div><div class="line">&#123;</div><div class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">	&#123;</div><div class="line">		memset(w,0,sizeof(w));</div><div class="line">		memset(value,0,sizeof(value));</div><div class="line">		memset(dp,0,sizeof(dp));</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++)</div><div class="line">		&#123;</div><div class="line">			for(int j = v; j &gt;= 0; --j)</div><div class="line">			&#123;</div><div class="line">				if(j &gt;= w[i])</div><div class="line">				    dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i]]+value[i]);</div><div class="line">				else</div><div class="line">				    dp[i][j] = dp[i-1][j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		printf(&quot;%d\n&quot;,dp[n][v]);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="优化版本，一维数组实现"><a href="#优化版本，一维数组实现" class="headerlink" title="优化版本，一维数组实现"></a>优化版本，一维数组实现</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int n,v;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int dp[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">	&#123;</div><div class="line">		memset(w,0,sizeof(w));</div><div class="line">		memset(value,0,sizeof(value));</div><div class="line">		memset(dp,0,sizeof(dp));</div><div class="line">		for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++)</div><div class="line">		    for(int j = v; j &gt;= w[i]; --j)</div><div class="line">		        dp[j] = max(dp[j],dp[j-w[i]]+value[i]);</div><div class="line">		//体积为 j 的背包容纳的最大价值。</div><div class="line">		//体积为 j - w[i] 的背包容纳的最大价值。</div><div class="line">		printf(&quot;%d\n&quot;,dp[v]);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="动态规划一般的解题三部曲"><a href="#动态规划一般的解题三部曲" class="headerlink" title="动态规划一般的解题三部曲"></a>动态规划一般的解题三部曲</h1><h2 id="确定状态-1"><a href="#确定状态-1" class="headerlink" title="确定状态"></a>确定状态</h2><h2 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h2><h2 id="确定编码实现方式-1"><a href="#确定编码实现方式-1" class="headerlink" title="确定编码实现方式"></a>确定编码实现方式</h2>]]></content>
+      <categories>
+        <category>动态规划</category>
+      </categories>
+      <tags>
+        <tag>背包问题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ICPC打铁记</title>
     <url>/2019/11/18/ICPC%E6%89%93%E9%93%81/</url>
     <content><![CDATA[<h1 id="十一月十六"><a href="#十一月十六" class="headerlink" title="十一月十六"></a>十一月十六</h1><p> 沈阳的十一月大雪过后已是寒风凛至,头天马<br> 哥和王哥带俺去东北大学报道，报道结束,已<br> 经是上午十一点过,然后我提议去食堂觅食，<br> 然后我们就径直前去食堂。饭后，马哥的朋友<br> 带我们去寻找空教室休息。东大是我第一次在<br> 大学里看到拥有人脸支付功能的售货机。在这<br> 里点评东大的饭是真的好吃,本来这次打算和<br> 周哥他们见一面,后来想想，日后有缘自会相<br> 见。最后热生赛后我们一起去吃晚饭，然后回<br> 校。</p>
