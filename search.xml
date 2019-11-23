@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>STL</title>
+    <url>/2019/11/23/STL/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>01背包</title>
     <url>/2019/11/21/01%E8%83%8C%E5%8C%85/</url>
     <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p> 有 n 件物品和容量是 V 的背包。每件物品只能取一次。每件物品有自<br> 己的体积和价值。在不超过背包容积的状态下，问背包能够容纳的最大<br> 价值是多少？</p>
