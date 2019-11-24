@@ -23,7 +23,7 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><em>搜索解决问题：</em><br>在一个空间中寻找目标<br>空间指的是解空间<br>目标是指目标状态<br>解空间：如果把一个问题的抽象成一个数学上的向量，那么包含这个向量<br>空间，也就是解空间。<br>状态：用于描述问题或问题解的一些向量。</p>
 ]]></content>
       <categories>
-        <category>ACM入门</category>
+        <category>ACM</category>
       </categories>
       <tags>
         <tag>搜索</tag>
@@ -34,7 +34,7 @@
     <url>/2019/11/23/STL/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>ACM入门</category>
+        <category>ACM</category>
       </categories>
       <tags>
         <tag>STL</tag>
@@ -55,7 +55,7 @@
 <h3 id="优化版本，一维数组实现"><a href="#优化版本，一维数组实现" class="headerlink" title="优化版本，一维数组实现"></a>优化版本，一维数组实现</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int n,v;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int dp[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">	&#123;</div><div class="line">		memset(w,0,sizeof(w));</div><div class="line">		memset(value,0,sizeof(value));</div><div class="line">		memset(dp,0,sizeof(dp));</div><div class="line">		for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++)</div><div class="line">		    for(int j = v; j &gt;= w[i]; --j)</div><div class="line">		        dp[j] = max(dp[j],dp[j-w[i]]+value[i]);</div><div class="line">		//体积为 j 的背包容纳的最大价值。</div><div class="line">		//体积为 j - w[i] 的背包容纳的最大价值。</div><div class="line">		printf(&quot;%d\n&quot;,dp[v]);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="动态规划一般的解题三部曲"><a href="#动态规划一般的解题三部曲" class="headerlink" title="动态规划一般的解题三部曲"></a>动态规划一般的解题三部曲</h1><h2 id="确定状态-1"><a href="#确定状态-1" class="headerlink" title="确定状态"></a>确定状态</h2><h2 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h2><h2 id="确定编码实现方式-1"><a href="#确定编码实现方式-1" class="headerlink" title="确定编码实现方式"></a>确定编码实现方式</h2>]]></content>
       <categories>
-        <category>动态规划</category>
+        <category>ACM</category>
       </categories>
       <tags>
         <tag>背包问题</tag>
