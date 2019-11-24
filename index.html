@@ -295,6 +295,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SYUNMay.github.io/2019/11/24/搜索/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edviv">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Edviv">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/24/搜索/" itemprop="url">DFS && BFS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T11:32:37+08:00">
+                2019-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM入门/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种高级的有IDDFS,DBFS,A,IDA等等，本蒻今天讲DFS &amp;&amp; BFS。
+DFS算法过程 DFS(状态 A)1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。2.调用DFS(状态A+t) 即先走下
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/24/搜索/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://SYUNMay.github.io/2019/11/23/STL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,6 +486,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM入门/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -366,8 +537,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/23/STL/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -507,18 +685,17 @@
       
         
           
-            <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p> 有 n 件物品和容量是 V 的背包。每件物品只能取一次。每件物品有自<br> 己的体积和价值。在不超过背包容积的状态下，问背包能够容纳的最大<br> 价值是多少？</p>
-<p> <strong>输入格式</strong><br> 第一行两个整数 n,v,分别代表物品的数量和背包的容积。接下来 n行,<br> 每行两个整数，分别代表物品的体积和价值</p>
-<p> <strong>输出格式</strong><br> 输出一个整数，表示最大价值。</p>
-<p> <strong>数据范围</strong><br> 0 &lt; N,V&lt;= 1000;<br> 0 &lt; w, value &lt;= 1000;</p>
-<p><strong>输入样例</strong><br>4 5<br>1 2<br>2 4<br>3 4<br>4 5</p>
-<p><strong>输出样例</strong><br>8</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="确定状态"><a href="#确定状态" class="headerlink" title="确定状态"></a>确定状态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dp[i][j]:表示前i个物品体积为j的背包,能够容纳价值多大的商品。</div></pre></td></tr></table></figure>
-<h2 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">如果背包当前体积小于物品的体积，就不选这个物品，即:</div><div class="line">--&gt;  dp[i][j] = dp[i-1][j];</div><div class="line">如果背包当前体积大于或等于物品的体积,就选择这个物品,即:</div><div class="line">--&gt;  dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i]]+value[i])</div><div class="line">dp[i-1][j]的含义：前 i- 1个物品放入容量为j的背包所能够容纳的</div><div class="line">最大价值。</div><div class="line">dp[i-1][j-w[i]]+value[i]含义:前 i - 1个物品放入容量为j-w[i]</div><div class="line">的背包所能够容纳的最大价值。</div></pre></td></tr></table></figure>
-<h2 id="确定编码实现方式"><a href="#确定编码实现方式" class="headerlink" title="确定编码实现方式"></a>确定编码实现方式</h2><h3 id="未优化代码：二维数组的实现"><a href="#未优化代码：二维数组的实现" class="headerlink" title="未优化代码：二维数组的实现"></a>未优化代码：二维数组的实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int n,v;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int dp[maxn][maxn];</div><div class="line">int mian()</div><div class="line">&#123;</div><div class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">	&#123;</div><div class="line">		memset(w,0,sizeof(w));</div><div class="line">		memset(value,0,sizeof(value));</div><div class="line">		memset(dp,0,sizeof(dp));</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++)</div><div class="line">		&#123;</div><div class="line">			for(int j = v; j &gt;= 0; --j)</div><div class="line">			&#123;</div><div class="line">				if(j &gt;= w[i])</div><div class="line">				    dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i]]+value[i]);</div><div class="line">				else</div><div class="line">				    dp[i][j] = dp[i-1][j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		printf(&quot;%d\n&quot;,dp[n][v]);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="优化版本，一维数组实现"><a href="#优化版本，一维数组实现" class="headerlink" title="优化版本，一维数组实现"></a>优化版本，一维数组实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int n,v;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int dp[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">	&#123;</div><div class="line">		memset(w,0,sizeof(w));</div><div class="line">		memset(value,0,sizeof(value));</div><div class="line">		memset(dp,0,sizeof(dp));</div><div class="line">		for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line"></div><div class="line">		for(int i = 1; i &lt;= n; i++)</div><div class="line">		    for(int j = v; j &gt;= w[i]; --j)</div><div class="line">		        dp[j] = max(dp[j],dp[j-w[i]]+value[i]);</div><div class="line">		//体积为 j 的背包容纳的最大价值。</div><div class="line">		//体积为 j - w[i] 的背包容纳的最大价值。</div><div class="line">		printf(&quot;%d\n&quot;,dp[v]);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="动态规划一般的解题三部曲"><a href="#动态规划一般的解题三部曲" class="headerlink" title="动态规划一般的解题三部曲"></a>动态规划一般的解题三部曲</h1><h2 id="确定状态-1"><a href="#确定状态-1" class="headerlink" title="确定状态"></a>确定状态</h2><h2 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h2><h2 id="确定编码实现方式-1"><a href="#确定编码实现方式-1" class="headerlink" title="确定编码实现方式"></a>确定编码实现方式</h2>
-          
+          问题描述 有 n 件物品和容量是 V 的背包。每件物品只能取一次。每件物品有自 己的体积和价值。在不超过背包容积的状态下，问背包能够容纳的最大 价值是多少？
+ 输入格式 第一行两个整数 n,v,分别代表物品的数量和背包的容积。接下来 n行, 每行两个整数，分别代表物品的体积和价值
+ 输出格式 输出一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/21/01背包/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -658,10 +835,15 @@
       
         
           
-            <h1 id="十一月十六"><a href="#十一月十六" class="headerlink" title="十一月十六"></a>十一月十六</h1><p> 沈阳的十一月大雪过后已是寒风凛至,头天马<br> 哥和王哥带俺去东北大学报道，报道结束,已<br> 经是上午十一点过,然后我提议去食堂觅食，<br> 然后我们就径直前去食堂。饭后，马哥的朋友<br> 带我们去寻找空教室休息。东大是我第一次在<br> 大学里看到拥有人脸支付功能的售货机。在这<br> 里点评东大的饭是真的好吃,本来这次打算和<br> 周哥他们见一面,后来想想，日后有缘自会相<br> 见。最后热生赛后我们一起去吃晚饭，然后回<br> 校。</p>
-<h1 id="十一月十七"><a href="#十一月十七" class="headerlink" title="十一月十七"></a>十一月十七</h1><p> 正式赛那天早晨我很心慌,这一切来源我数学<br> 没看完,只把算法基础课的数学部分全部看完<br> 以及好好研究了一下博弈类型的题,然后把毛<br> 毛雨学姐发给我的数学看了一部分,正式赛中<br> 我发现我的问题,我发现平时思维题做多了,<br> 现在就只习惯思维题。ICPC我认识到自己是真<br> 的菜,在明年的省赛，蓝桥杯以及四省赛前我<br> 要提升自己，从一个量变到质变的过程。那晚<br> 我想了一晚上,我不能让”双非”成为我这一生<br> 的痛点，我要考研。考往西安电子科技大学，<br> 如果问我为什么不回成都呢？答案很简单，<br> 我向往自由，对于找对象这件事我现在没什<br> 么兴趣了，一切随缘。对于我两次高考的失败<br> 其实我早已意识到自己存在的毛病,但是我却<br> 一直逃避。做事情一旦遇见外界的干扰我就选<br> 择放弃，然后自嘲”自己时运不济，老天喜欢<br> 和我开玩笑”,其实如果当初我自律,现在我至<br> 少在读大三，不用为未来担忧。现在以及未来<br> 我要做我自己，他人用什么态度对待我,我将<br> 以什么态度对待他人。也许我会很高冷，也许<br> 让人看不懂，拥有自己的棱角。在此，感谢马<br> 哥和王哥带我一起去参加ICPC。未来在算法竞<br> 赛这条路上不拿牌子我不甘心，至少在省赛和<br> 东北四省赛中取得牌子，惟愿我能找到我的快<br> 乐。</p>
-
-          
+          十一月十六 沈阳的十一月大雪过后已是寒风凛至,头天马 哥和王哥带俺去东北大学报道，报道结束,已 经是上午十一点过,然后我提议去食堂觅食， 然后我们就径直前去食堂。饭后，马哥的朋友 带我们去寻找空教室休息。东大是我第一次在 大学里看到拥有人脸支付功能的售货机。在这 里点评东大的饭是真的好吃,本来这次打
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/18/ICPC打铁/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -745,7 +927,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -756,7 +938,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -767,7 +949,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

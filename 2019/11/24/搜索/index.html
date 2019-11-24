@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="搜索," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种高级的有IDDFS,DBFS,A,IDA等等，本蒻今天讲DFS &amp;amp;&amp;amp; BFS。
+DFS算法过程 DFS(状态 A)1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。2.调用DFS(状态A+t) 即先走下一层。习题1CCPC2019哈尔滨站
+题目描述 六个字符串，从每个字符串中取出一个字符，问能否构成”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DFS && BFS">
+<meta property="og:url" content="https://SYUNMay.github.io/2019/11/24/搜索/index.html">
+<meta property="og:site_name" content="Edviv">
+<meta property="og:description" content="搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种高级的有IDDFS,DBFS,A,IDA等等，本蒻今天讲DFS &amp;amp;&amp;amp; BFS。
+DFS算法过程 DFS(状态 A)1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。2.调用DFS(状态A+t) 即先走下一层。习题1CCPC2019哈尔滨站
+题目描述 六个字符串，从每个字符串中取出一个字符，问能否构成”">
+<meta property="og:updated_time" content="2019-11-24T11:53:43.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DFS && BFS">
+<meta name="twitter:description" content="搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种高级的有IDDFS,DBFS,A,IDA等等，本蒻今天讲DFS &amp;amp;&amp;amp; BFS。
+DFS算法过程 DFS(状态 A)1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。2.调用DFS(状态A+t) 即先走下一层。习题1CCPC2019哈尔滨站
+题目描述 六个字符串，从每个字符串中取出一个字符，问能否构成”">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://SYUNMay.github.io/2019/11/24/搜索/"/>
+
+
+
+
+
+  <title>DFS && BFS | Edviv</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Edviv</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">永远年轻 永远热泪盈眶</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SYUNMay.github.io/2019/11/24/搜索/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edviv">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Edviv">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DFS && BFS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T11:32:37+08:00">
+                2019-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM入门/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种<br>高级的有IDDFS,DBFS,A<em>,IDA</em>等等，本蒻今天讲DFS &amp;&amp; BFS。</p>
+<h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="算法过程-DFS-状态-A"><a href="#算法过程-DFS-状态-A" class="headerlink" title="算法过程 DFS(状态 A)"></a>算法过程 DFS(状态 A)</h2><h3 id="1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"><a href="#1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。" class="headerlink" title="1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"></a>1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。</h3><h3 id="2-调用DFS-状态A-t-即先走下一层。"><a href="#2-调用DFS-状态A-t-即先走下一层。" class="headerlink" title="2.调用DFS(状态A+t) 即先走下一层。"></a>2.调用DFS(状态A+t) 即先走下一层。</h3><h2 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h2><p><a href="http://codeforces.com/gym/102394/problem/F" target="_blank" rel="external">CCPC2019哈尔滨站</a></p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p> 六个字符串，从每个字符串中取出一个字符，问能否构成”harbin”？如果能构<br> 则输出”Yes”,否则输出”No”。</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h3><p>  多组测试，第一个数字 T 代表测试组数<br>  每组测试输入6个字符串<br>  所有字符串长度之和不超过 2e6</p>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h3><p>  每组测试输出”Yes”或”No”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">char s[2002000];</div><div class="line">bool mp[7][7];</div><div class="line">bool a[7];</div><div class="line">bool dfs(int p)</div><div class="line">&#123;</div><div class="line">	if(p == 7) return true;</div><div class="line">	for(int i = 1; i &lt;= 6; ++i)</div><div class="line">	&#123;</div><div class="line">		if(mp[p][i] &amp;&amp; a[i])</div><div class="line">		&#123;</div><div class="line">			a[i] = 0;</div><div class="line">			if(dfs(p + 1)) return true;</div><div class="line">			a[i] = 1;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return false;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int T;</div><div class="line">	scanf(&quot;%d&quot;,&amp;T);</div><div class="line">	while(T--)</div><div class="line">    &#123;</div><div class="line">		memset(mp,0,sizeof(mp));</div><div class="line">		memset(a,1,sizeof(a));</div><div class="line">		for(int i = 1; i &lt;= 6; ++i)</div><div class="line">        &#123;</div><div class="line">			scanf(&quot;%s&quot;,s);</div><div class="line">			int len = strlen(s);</div><div class="line">			for(int j = 0; j &lt; len; ++j)</div><div class="line">				if(s[j] == &apos;h&apos;)</div><div class="line">					mp[i][1] = 1;</div><div class="line">				else if(s[j] == &apos;a&apos;)</div><div class="line">					mp[i][2] = 1;</div><div class="line">				else if(s[j] == &apos;r&apos;)</div><div class="line">					mp[i][3] = 1;</div><div class="line">				else if(s[j] == &apos;b&apos;)</div><div class="line">					mp[i][4] = 1;</div><div class="line">				else if(s[j] == &apos;i&apos;)</div><div class="line">					mp[i][5] = 1;</div><div class="line">				else if(s[j] == &apos;n&apos;)</div><div class="line">					mp[i][6] = 1;</div><div class="line">        &#125;</div><div class="line">		if(dfs(1))</div><div class="line">			printf(&quot;Yes\n&quot;);</div><div class="line">		else</div><div class="line">			printf(&quot;No\n&quot;);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h2><h3 id="题面描述-简单版本"><a href="#题面描述-简单版本" class="headerlink" title="题面描述(简单版本)"></a>题面描述(简单版本)</h3><p> 有一个 n行m列 的网格，每个格子里非 0 即 1，有 q 次操作，每次<br> 给定一个以(x1,y1)为左上角，(x2,y2)为右下角的矩形内所有格子里<br> 的数字都变成1。问每次操作之后，所有数字为 1 的格子构成的四连通<br> 块的个数。</p>
+<h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入第一行两个整数 n,m(1 &lt;= n,m &lt;= 300),表示网格的大小。<br>接下来 n 行，每行一个长为 m 的 01串，表示初始网格大小。<br>接下来一行一个整数 q, 表示操作个数。<br>接下来 q 行，每行四个整数 x1, y1, x2, y2(1&lt;=x1&lt;=x2&lt;=n,1&lt;=y1&lt;=y2&lt;=m)<br>表示把以(x1,y1)为左上角，(x2,y2)为右下角的矩形中的元素都变为1。</p>
+<h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述"></a>输出描述</h3><p>输出共 q 行，每行一个整数，表示每次操作后含有数字1的格子构成的四连通块个数</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><p>5 6<br>101010<br>000001<br>101010<br>000001<br>101010<br>3<br>1 2 5 2<br>4 4 4 4<br>1 3 3 6</p>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><p>6<br>7<br>2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 350;</div><div class="line">char mp[maxn][maxn],flag[maxn][maxn];</div><div class="line">int head[4][2]=&#123;&#123;0,-1&#125;,&#123;1,0&#125;,&#123;0,1&#125;,&#123;-1,0&#125;&#125;;</div><div class="line">int n, m ,q, ans;</div><div class="line"></div><div class="line">bool inbound(int x, int y)</div><div class="line">&#123;</div><div class="line">    if(x&gt;=1 &amp;&amp; x &lt;= n &amp;&amp; y&gt;=1 &amp;&amp; y&lt;=m)</div><div class="line">        return true;</div><div class="line">    return false;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs(int x,int y)</div><div class="line">&#123;</div><div class="line">    mp[x][y] = &apos;0&apos;;</div><div class="line">    for(int i = 0; i &lt; 4; i++)</div><div class="line">    &#123;</div><div class="line">        int dx = x + head[i][0];</div><div class="line">        int dy = y + head[i][1];</div><div class="line">        if(mp[dx][dy]==&apos;1&apos; &amp;&amp; inbound(dx,dy))</div><div class="line">        &#123;</div><div class="line">            mp[dx][dy] = &apos;0&apos;;</div><div class="line">            dfs(dx,dy);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	cin&gt;&gt;n&gt;&gt;m;</div><div class="line">	for(int i = 1; i &lt;= n; i++)</div><div class="line">	    for(int j = 1; j &lt;= m; j++)</div><div class="line">	        cin&gt;&gt;mp[i][j];</div><div class="line">	cin&gt;&gt;q;</div><div class="line">	while(q--)</div><div class="line">	&#123;</div><div class="line">	    ans = 0;</div><div class="line">		int x1, y1, x2, y2;</div><div class="line">		cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;</div><div class="line">		for(int i = x1; i &lt;= x2; i++)</div><div class="line">            for(int j = y1; j &lt;= y2; j++)</div><div class="line">                mp[i][j] = &apos;1&apos;;</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">            for(int j = 1; j &lt;= m; j++)</div><div class="line">                flag[i][j]=mp[i][j];</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">	        for(int j = 1; j &lt;= m; j++)</div><div class="line">	        &#123;</div><div class="line">	            if(mp[i][j] == &apos;1&apos;)</div><div class="line">                &#123;</div><div class="line">                    ans++;</div><div class="line">                    dfs(i,j);</div><div class="line">                &#125;</div><div class="line">	        &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">            for(int j = 1; j &lt;= m; j++)</div><div class="line">                mp[i][j]=flag[i][j];</div><div class="line">        printf(&quot;%d\n&quot;,ans);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><h2 id="算法过程-广度优先搜索"><a href="#算法过程-广度优先搜索" class="headerlink" title="算法过程(广度优先搜索)"></a>算法过程(广度优先搜索)</h2><h3 id="1-一层一层的走"><a href="#1-一层一层的走" class="headerlink" title="1.一层一层的走"></a>1.一层一层的走</h3><h3 id="2-广搜总是每次都把离上一状态最近的状态用一个队列记录下来"><a href="#2-广搜总是每次都把离上一状态最近的状态用一个队列记录下来" class="headerlink" title="2.广搜总是每次都把离上一状态最近的状态用一个队列记录下来"></a>2.广搜总是每次都把离上一状态最近的状态用一个队列记录下来</h3><h3 id="3-记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并"><a href="#3-记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并" class="headerlink" title="3.记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并"></a>3.记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并</h3><p>且以这个状态为”根节点”进行广度优先搜索。</p>
+<h3 id="4-直到整个队列为空。"><a href="#4-直到整个队列为空。" class="headerlink" title="4.直到整个队列为空。"></a>4.直到整个队列为空。</h3><h2 id="习题三-走迷宫-Bfs"><a href="#习题三-走迷宫-Bfs" class="headerlink" title="习题三 走迷宫(Bfs)"></a>习题三 走迷宫(Bfs)</h2><h3 id="题面描述"><a href="#题面描述" class="headerlink" title="题面描述"></a>题面描述</h3><p> 一个 n行 m 列的迷宫，迷宫的格子里分别放 0 和 1，1 表示可以通过，0表<br> 示不可以通过。<br> 从某个点开始，有四个方向可以走，前进方格中的数字为 1 时表示可以通过，<br> 0表示不可通过，要另找路径。<br> 起点是左上角，输入终点坐标，给出最短路径。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>6 5 6 5<br>1 0 0 0 0<br>1 1 1 1 1<br>0 0 0 0 1<br>1 1 1 1 1<br>1 0 0 0 0<br>1 1 1 1 1</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>17<br>(11)(21)-&gt;(22)-&gt;(23)-&gt;(24)-&gt;(25)-&gt;(35)-&gt;(45)-&gt;(44)-&gt;(43)-&gt;(42)-&gt;(41)-&gt;(51)-&gt;(61)-&gt;(62)-&gt;(63)-&gt;(64)-&gt;(65)-&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int n,m,tx,ty;</div><div class="line">int mp[110][110];</div><div class="line">int qu[10010];  //模拟队列，存所有的点</div><div class="line">int l,r;    //[l,r)</div><div class="line">int dis[110][110];  //dis[][]表示这个点是否被访问过</div><div class="line">int pre[10010];  //pre[]记录方案</div><div class="line">int dir[4][2] = &#123;1, 0, 0, 1, -1, 0, 0, -1&#125;;</div><div class="line">bool inbound(int x, int l, int r)</div><div class="line">&#123;</div><div class="line">    if(x &lt; l || x &gt;= r)</div><div class="line">        return false;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void write(int s,int x)</div><div class="line">&#123;</div><div class="line">    if(s == x)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;(%d%d)&quot;,s/m+1,s%m+1);</div><div class="line">        return ;</div><div class="line">    &#125;</div><div class="line">    write(s,pre[x]);</div><div class="line">    printf(&quot;(%d%d)-&gt;&quot;,x/m+1,x%m+1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void bfs(int s, int t)</div><div class="line">&#123;</div><div class="line">    memset(dis,-1,sizeof(dis));</div><div class="line">    memset(qu,0,sizeof(qu));</div><div class="line">    l = 0; r = 0;</div><div class="line">    qu[0] = s;  //起点存入队列</div><div class="line">    r++;   //保证区间左闭右开</div><div class="line">    dis[s/m][s%m] = 0;</div><div class="line">    while(l &lt; r)</div><div class="line">    &#123;</div><div class="line">        int point = qu[l];  //取出队首元素</div><div class="line">        if(point == t) break;   //到达终点，提前退出</div><div class="line">        l++;  //出队</div><div class="line">        int x = point/m, y = point%m;  //点的位置</div><div class="line">        for(int i = 0; i &lt; 4; i++)   //四个方向扩展</div><div class="line">        &#123;</div><div class="line">            int tx = x + dir[i][0];</div><div class="line">            int ty = y + dir[i][1];</div><div class="line">            if(!inbound(tx,0,n)||!inbound(ty,0,m))</div><div class="line">                continue;</div><div class="line">            if(dis[tx][ty] == -1 &amp;&amp; mp[tx][ty] == 1)</div><div class="line">            &#123;</div><div class="line">                dis[tx][ty] = dis[x][y] + 1;  //(x,y)--&gt;(tx,ty)</div><div class="line">                pre[tx*m+ty] = point; //记录前驱</div><div class="line">                qu[r] = tx*m+ty;  //放入队列</div><div class="line">                r++;   //进队</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,dis[t/m][t%m]);</div><div class="line">    write(s,t);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d%d&quot;, &amp;n,&amp;m);</div><div class="line">    scanf(&quot; %d%d&quot;, &amp;tx,&amp;ty);</div><div class="line">    for(int i = 0; i &lt; n; i++)</div><div class="line">        for(int j = 0; j &lt; m; j++)</div><div class="line">            scanf(&quot; %d&quot;, &amp;mp[i][j]);</div><div class="line">    tx--;ty--;</div><div class="line">    bfs(0 ,tx*m+ty);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><em>搜索解决问题：</em><br>在一个空间中寻找目标<br>空间指的是解空间<br>目标是指目标状态<br>解空间：如果把一个问题的抽象成一个数学上的向量，那么包含这个向量<br>空间，也就是解空间。<br>状态：用于描述问题或问题解的一些向量。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搜索/" rel="tag"># 搜索</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/23/STL/" rel="next" title="STL">
+                <i class="fa fa-chevron-left"></i> STL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Edviv" />
+            
+              <p class="site-author-name" itemprop="name">Edviv</p>
+              <p class="site-description motion-element" itemprop="description">愿你遍历山河 仍觉人间值得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SYUNMay" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:18784421369@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://baobaobear.github.io" title="抱抱熊" target="_blank">抱抱熊</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS"><span class="nav-number">1.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法过程-DFS-状态-A"><span class="nav-number">1.1.</span> <span class="nav-text">算法过程 DFS(状态 A)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-调用DFS-状态A-t-即先走下一层。"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.调用DFS(状态A+t) 即先走下一层。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题1"><span class="nav-number">1.2.</span> <span class="nav-text">习题1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述"><span class="nav-number">1.2.2.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述"><span class="nav-number">1.2.3.</span> <span class="nav-text">输出描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2"><span class="nav-number">1.3.</span> <span class="nav-text">习题2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题面描述-简单版本"><span class="nav-number">1.3.1.</span> <span class="nav-text">题面描述(简单版本)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入描述-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出描述-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">1.3.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">1.3.5.</span> <span class="nav-text">样例输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS"><span class="nav-number">2.</span> <span class="nav-text">BFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法过程-广度优先搜索"><span class="nav-number">2.1.</span> <span class="nav-text">算法过程(广度优先搜索)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-一层一层的走"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.一层一层的走</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-广搜总是每次都把离上一状态最近的状态用一个队列记录下来"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.广搜总是每次都把离上一状态最近的状态用一个队列记录下来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-直到整个队列为空。"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.直到整个队列为空。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题三-走迷宫-Bfs"><span class="nav-number">2.2.</span> <span class="nav-text">习题三 走迷宫(Bfs)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题面描述"><span class="nav-number">2.2.1.</span> <span class="nav-text">题面描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">2.2.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.2.3.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Edviv</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
