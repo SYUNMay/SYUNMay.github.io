@@ -228,7 +228,7 @@
       </tags>
   </entry>
   <entry>
-    <title>DFS && BFS</title>
+    <title>DFS &amp;&amp; BFS</title>
     <url>/2019/11/24/%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<p>搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种<br>高级的有IDDFS,DBFS,A<em>,IDA</em>等等，本蒻今天讲DFS &amp;&amp; BFS。</p>
 <h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="算法过程-DFS-状态-A"><a href="#算法过程-DFS-状态-A" class="headerlink" title="算法过程 DFS(状态 A)"></a>算法过程 DFS(状态 A)</h2><h3 id="1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"><a href="#1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。" class="headerlink" title="1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"></a>1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。</h3><h3 id="2-调用DFS-状态A-t-即先走下一层。"><a href="#2-调用DFS-状态A-t-即先走下一层。" class="headerlink" title="2.调用DFS(状态A+t) 即先走下一层。"></a>2.调用DFS(状态A+t) 即先走下一层。</h3><h2 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h2><p><a href="http://codeforces.com/gym/102394/problem/F" target="_blank" rel="external">CCPC2019哈尔滨站</a></p>
