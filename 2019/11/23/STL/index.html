@@ -79,16 +79,19 @@
 
 
 
-<meta name="description" content="愿你遍历山河 仍觉人间值得">
+<meta name="description" content="vector :动态数组,倍增思想定义 :   包含于头文件 #include    定义一个数组:vectorv:Type是数据类型   vectorv[N]   固定的一维是N,第二维是动态的
+常用操作:   v.push_back(i):在尾部增加元素   v.size():元素个数   v.empty():判断是否位空。空返回ture,非空返回false   v.insert(v.begi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL">
 <meta property="og:url" content="https://SYUNMay.github.io/2019/11/23/STL/index.html">
 <meta property="og:site_name" content="Sunny">
-<meta property="og:description" content="愿你遍历山河 仍觉人间值得">
-<meta property="og:updated_time" content="2019-11-24T12:03:07.856Z">
+<meta property="og:description" content="vector :动态数组,倍增思想定义 :   包含于头文件 #include    定义一个数组:vectorv:Type是数据类型   vectorv[N]   固定的一维是N,第二维是动态的
+常用操作:   v.push_back(i):在尾部增加元素   v.size():元素个数   v.empty():判断是否位空。空返回ture,非空返回false   v.insert(v.begi">
+<meta property="og:updated_time" content="2020-02-05T12:33:24.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL">
-<meta name="twitter:description" content="愿你遍历山河 仍觉人间值得">
+<meta name="twitter:description" content="vector :动态数组,倍增思想定义 :   包含于头文件 #include    定义一个数组:vectorv:Type是数据类型   vectorv[N]   固定的一维是N,第二维是动态的
+常用操作:   v.push_back(i):在尾部增加元素   v.size():元素个数   v.empty():判断是否位空。空返回ture,非空返回false   v.insert(v.begi">
 
 
 
@@ -384,7 +387,37 @@
       
 
       
-        
+        <h1 id="vector-动态数组-倍增思想"><a href="#vector-动态数组-倍增思想" class="headerlink" title="vector :动态数组,倍增思想"></a>vector :动态数组,倍增思想</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义 :"></a>定义 :</h2><p>   包含于头文件 #include <vector><br>   定义一个数组:vector<type>v:Type是数据类型<br>   vector<int>v[N]<br>   固定的一维是N,第二维是动态的</int></type></vector></p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   v.push_back(i):在尾部增加元素<br>   v.size():元素个数<br>   v.empty():判断是否位空。空返回ture,非空返回false<br>   v.insert(v.begin()+i,k):在第i个元素前面插入k<br>   v.insert(v.end(),10,5):尾部插入10个值为5的元素<br>   v.pop_back(i):删除尾部元素<br>   v.erase(v.begin()+i,v.begin()+j):删除区间[i,j)的元素<br>   v.erase(v.begin()+2):删除第三个元素<br>   v.clear():清空数组<br>   v.resize(n):数组大小变为n<br>   reverse(v.begin(),v.end()):翻转数组<br>   sort(v.begin(),v.end()):从小到大排序<br>   []<br>   支持比较运算,按字典序</p>
+<h1 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义:"></a>定义:</h2><p>   pair<type,type> P,Type是数据类型</type,type></p>
+<h2 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   P.first:取第一个元素<br>   P.second:取第二个元素</p>
+<h1 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string:字符串"></a>string:字符串</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义:"></a>定义:</h2><p>   string s;</p>
+<h2 id="常用操作-2"><a href="#常用操作-2" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   s = “”;清空操作<br>   getline(cin,s):输入含有空格的字符串<br>   s.size()/s.length():返回字符串长度<br>   s.empty():判断是否为空<br>   s.clear():清空<br>   substr(起始下标,(子串长度)):返回子串,若省略子串长度,返回起始下标到字符串结束<br>   s_str():返回字符串所在字符数组的起始地址</p>
+<h1 id="stack-先进后出"><a href="#stack-先进后出" class="headerlink" title="stack:先进后出"></a>stack:先进后出</h1><h2 id="定义-3"><a href="#定义-3" class="headerlink" title="定义:"></a>定义:</h2><p>   包含于头文件 #include <stack><br>   定义一个栈 stack<type> s,Type是数据类型</type></stack></p>
+<h2 id="常用操作-3"><a href="#常用操作-3" class="headerlink" title="常用操作"></a>常用操作</h2><p>   s.push(i)：把i加入栈顶<br>   s.top()：返回栈顶元素<br>   s.pop()：弹出栈顶元素<br>   s.size()：返回栈中的元素个数<br>   s.empty()：判断栈是否为空，空返回true,非空返回false</p>
+<h1 id="queue：先进先出"><a href="#queue：先进先出" class="headerlink" title="queue：先进先出"></a>queue：先进先出</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><pre><code>包含于头文件 #include &lt;queue&gt;
+定义一个队列 queue&lt;Type&gt; q,Type是数据类型
+</code></pre><h2 id="常用操作："><a href="#常用操作：" class="headerlink" title="常用操作："></a>常用操作：</h2><p>   q.push(i):把i放进队列<br>   q.front():返回队首元素<br>   q.pop():删除队首元素<br>   q.back():返回队尾元素<br>   q.size():返回元素个数<br>   q.empty():判断队列是否为空,空返回true,非空返回false</p>
+<h1 id="deque-双端队列"><a href="#deque-双端队列" class="headerlink" title="deque:双端队列"></a>deque:双端队列</h1><h2 id="定义-4"><a href="#定义-4" class="headerlink" title="定义:"></a>定义:</h2><p>   包含于头文件 #include <deque><br>   deque<type> D;</type></deque></p>
+<h2 id="常用操作-4"><a href="#常用操作-4" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   D.size():返回元素个数<br>   D.empty():判断是否为空<br>   D.clear():清空<br>   D.front():返回第一个元素<br>   D.back():返回最后一个元素<br>   D.push_back(i):在尾部插入i<br>   D.pop_back():队尾弹出最后一个数<br>   D.push_front(i):队首插入一个数i<br>   D.pop_front():队首弹出一个数<br>   D.begin():迭代器开始<br>   D.end():迭代器结束<br>   []:随机选取</p>
+<h1 id="priority-queue-优先级高的先出队。"><a href="#priority-queue-优先级高的先出队。" class="headerlink" title="priority_queue:优先级高的先出队。"></a>priority_queue:优先级高的先出队。</h1><h2 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h2><p>   包含于头文件 #include <queue><br>   定义一个优先队列 priority_queue<type> p,Type是数据类型</type></queue></p>
+<h2 id="常用操作-5"><a href="#常用操作-5" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   p.top():返回具有优先级高的元素值<br>   p.pop():删除最高优先级的元素<br>   p.push(i):插入新元素<br>   定义成小根堆:priority_queue<type,vector<type>,greater<type>&gt; Q;<br>   priority_queue<type> heap; heap.push(-x);<br>   无clear()函数</type></type></type,vector<type></p>
+<h1 id="list-存储空间不连续-双向链表"><a href="#list-存储空间不连续-双向链表" class="headerlink" title="list:存储空间不连续,双向链表"></a>list:存储空间不连续,双向链表</h1><h2 id="定义-5"><a href="#定义-5" class="headerlink" title="定义:"></a>定义:</h2><p>   vector:插入和删除操作少,随机访问元素频繁<br>   list:插入和删除频繁,随机访问少<br>   list<type>L,Type是数据类型</type></p>
+<h2 id="常用操作-6"><a href="#常用操作-6" class="headerlink" title="常用操作"></a>常用操作</h2><p>   L.push_back(i):赋值<br>   L.erase(i):删除i</p>
+<h1 id="set-集合中的元素是排好序并且只出现一次"><a href="#set-集合中的元素是排好序并且只出现一次" class="headerlink" title="set:集合中的元素是排好序并且只出现一次"></a>set:集合中的元素是排好序并且只出现一次</h1><h2 id="定义-6"><a href="#定义-6" class="headerlink" title="定义:"></a>定义:</h2><p>   访问元素的时间复杂度O(logn)<br>   set<type> s,Type是数据类型</type></p>
+<h2 id="常用操作-set-multiset-允许重复元素"><a href="#常用操作-set-multiset-允许重复元素" class="headerlink" title="常用操作 set/multiset(允许重复元素)"></a>常用操作 set/multiset(允许重复元素)</h2><p>   s.insert(i):把i放进集合s<br>   s.erase(i):删除元素i<br>   (1):输入一个数i,删除所以i,O(k+logn),k为i的个数<br>   (2):输入一个迭代器,删除这个迭代器<br>   s.clear():清空集合s<br>   s.empty():判断是否为空,空返回true,非空返回false<br>   s.size():返回元素个数<br>   s.find(k):查找k,若没找到返回end(),找到返回指向k的迭代器<br>   s.lower_bound(k):返回一个迭代器,指向键值不小于k的第一个元素<br>   s.upper_bound():返回一个迭代器,指向键值大于k的第一个元素</p>
+<h1 id="map-关联容器-查找的时间复杂度O-logn"><a href="#map-关联容器-查找的时间复杂度O-logn" class="headerlink" title="map:关联容器,查找的时间复杂度O(logn)"></a>map:关联容器,查找的时间复杂度O(logn)</h1><h2 id="定义-7"><a href="#定义-7" class="headerlink" title="定义:"></a>定义:</h2><p>   map<string,int> mp,存储string类型和int类型,第一个是key,第二个是value<br>   赋值:mp[“Tom”] = 15</string,int></p>
+<h2 id="常用操作-map-multimap"><a href="#常用操作-map-multimap" class="headerlink" title="常用操作:map/multimap"></a>常用操作:map/multimap</h2><p>   insert():插入的数是pair类型<br>   find():查找一个数,不存在返回迭代器end()<br>   count():返回某一个数的个数。<br>   erase():<br>   (1):输入一个数i,删除所以i,O(k+logn),k为i的个数<br>   (2):输入一个迭代器,删除这个迭代器<br>   []:multimap不支持此操作,O(logn)<br>   lower_bound(k):返回一个迭代器,指向键值不小于k的第一个元素<br>   upper_bound():返回一个迭代器,指向键值大于k的第一个元素</p>
+<h1 id="set-map-multiset-multimap-基于平衡二叉树-动态维护有序序列"><a href="#set-map-multiset-multimap-基于平衡二叉树-动态维护有序序列" class="headerlink" title="set,map,multiset,multimap:基于平衡二叉树,动态维护有序序列"></a>set,map,multiset,multimap:基于平衡二叉树,动态维护有序序列</h1><h2 id="都支持的操作"><a href="#都支持的操作" class="headerlink" title="都支持的操作:"></a>都支持的操作:</h2><p>   size():O(1)<br>   empty():O(1)<br>   clear()<br>   begin()/end()<br>   ++,–:返回前驱和后继,O(logn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">undered_set,undered_map,undered_multiset,undered_multimap,哈希表</div><div class="line">和上面类似,增删改查的时间复杂度是O(1)</div><div class="line">不支持 lower_bound()/upper_bound(),迭代器++,--</div></pre></td></tr></table></figure>
+<h1 id="bitset-压位-1kb-1024b"><a href="#bitset-压位-1kb-1024b" class="headerlink" title="bitset:压位 1kb=1024b"></a>bitset:压位 1kb=1024b</h1><h2 id="定义-8"><a href="#定义-8" class="headerlink" title="定义:"></a>定义:</h2><p>   bitset<10000> s:定义长度为1万的bitset,10000b</10000></p>
+<h2 id="常用操作-7"><a href="#常用操作-7" class="headerlink" title="常用操作:"></a>常用操作:</h2><p>   ~,&amp;,|,^</p>
+<blockquote>
+<blockquote>
+<p>,&lt;&lt;<br>   ==,!=<br>   []:取某一位<br>   count():返回多少个1<br>   any():判断是否至少有一个1<br>   none():判断是否全为0<br>   set():把所有位置成1<br>   set(k,v):将第k位置成v<br>   reset():把所以位变成0<br>   flip():等价于~<br>   flip(k):把第k位按位取反</p>
+</blockquote>
+</blockquote>
+
       
     </div>
     
@@ -478,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -585,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vector-动态数组-倍增思想"><span class="nav-number">1.</span> <span class="nav-text">vector :动态数组,倍增思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pair"><span class="nav-number">2.</span> <span class="nav-text">pair</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-1"><span class="nav-number">2.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string-字符串"><span class="nav-number">3.</span> <span class="nav-text">string:字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-2"><span class="nav-number">3.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stack-先进后出"><span class="nav-number">4.</span> <span class="nav-text">stack:先进后出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-3"><span class="nav-number">4.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-3"><span class="nav-number">4.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queue：先进先出"><span class="nav-number">5.</span> <span class="nav-text">queue：先进先出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义："><span class="nav-number">5.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作："><span class="nav-number">5.2.</span> <span class="nav-text">常用操作：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deque-双端队列"><span class="nav-number">6.</span> <span class="nav-text">deque:双端队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-4"><span class="nav-number">6.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-4"><span class="nav-number">6.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#priority-queue-优先级高的先出队。"><span class="nav-number">7.</span> <span class="nav-text">priority_queue:优先级高的先出队。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义：-1"><span class="nav-number">7.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-5"><span class="nav-number">7.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#list-存储空间不连续-双向链表"><span class="nav-number">8.</span> <span class="nav-text">list:存储空间不连续,双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-5"><span class="nav-number">8.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-6"><span class="nav-number">8.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set-集合中的元素是排好序并且只出现一次"><span class="nav-number">9.</span> <span class="nav-text">set:集合中的元素是排好序并且只出现一次</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-6"><span class="nav-number">9.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-set-multiset-允许重复元素"><span class="nav-number">9.2.</span> <span class="nav-text">常用操作 set/multiset(允许重复元素)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#map-关联容器-查找的时间复杂度O-logn"><span class="nav-number">10.</span> <span class="nav-text">map:关联容器,查找的时间复杂度O(logn)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-7"><span class="nav-number">10.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-map-multimap"><span class="nav-number">10.2.</span> <span class="nav-text">常用操作:map/multimap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set-map-multiset-multimap-基于平衡二叉树-动态维护有序序列"><span class="nav-number">11.</span> <span class="nav-text">set,map,multiset,multimap:基于平衡二叉树,动态维护有序序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#都支持的操作"><span class="nav-number">11.1.</span> <span class="nav-text">都支持的操作:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bitset-压位-1kb-1024b"><span class="nav-number">12.</span> <span class="nav-text">bitset:压位 1kb=1024b</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-8"><span class="nav-number">12.1.</span> <span class="nav-text">定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作-7"><span class="nav-number">12.2.</span> <span class="nav-text">常用操作:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
