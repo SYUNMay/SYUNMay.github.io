@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">分类 | Sunny</title>
+  <title itemprop="name">递归 | Sunny</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,61 +371,230 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/img/banner/writing.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        undefined</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-      <!-- .entry-content -->
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/dg.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/dg.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      递归</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
+      
+      <!-- 添加完成 -->
+    </header>
+  </div>
+
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a href="https://ac.nowcoder.com/acm/contest/998/A" target="_blank" rel="external">题目链接</a></p>
+<h1 id="递归实现指数型枚举"><a href="#递归实现指数型枚举" class="headerlink" title="递归实现指数型枚举"></a>递归实现指数型枚举</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>从1到n中(n&lt;=16)个整数中随机选取任意多个，输出所有可能的选择方案。</em><br><a id="more"></a></p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h2><p><em>输入一个整数n</em></p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h2><p><em>每行一种方案。同一行内的数必须升序排列，相邻两个数用恰好1个空格隔开。对于没有选任何数的方案，输出空行。本题有自定义校验器（SPJ），各行（不同方案）之间的顺序任意。</em></p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a><font size="5">样例</font></h2><p>###<font size="5">输入</font><br><em>3</em></p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a><font size="5">输出</font></h2><p><em>3</em><br><em>2</em><br><em>2 3</em><br><em>1</em><br><em>1 3</em><br><em>1 2</em><br><em>1 2 3</em></p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int n;</div><div class="line">vector&lt;int&gt; v;</div><div class="line">void dfs(int x)</div><div class="line">&#123;</div><div class="line">    if(x==n+1)&#123;</div><div class="line">        for(int i=0;i&lt;v.size();++i)</div><div class="line">            std::cout&lt;&lt;v[i]&lt;&lt;&quot; &quot;;</div><div class="line">        std::cout&lt;&lt;&apos;\n&apos;;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    //不选x的分支</div><div class="line">    dfs(x+1);    //求解子问题</div><div class="line">    //选x的分支</div><div class="line">    v.push_back(x); //记录x已经被选择</div><div class="line">    dfs(x+1);   //求解子问题</div><div class="line">    v.pop_back();   //准备回溯到上一问题之前，还原现场</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::ios::sync_with_stdio(false);</div><div class="line">    cout.tie(0);</div><div class="line">    std::cin&gt;&gt;n;</div><div class="line">    dfs(1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/998/B" target="_blank" rel="external">题目链接</a></p>
+<h1 id="递归实现组合型枚举"><a href="#递归实现组合型枚举" class="headerlink" title="递归实现组合型枚举"></a>递归实现组合型枚举</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>从 1~n 这 n 个整数中随机选出 m 个，输出所有可能的选择方案。n&gt;0,0&lt;=m&lt;=n,n+(n-m)&lt;=25,输入两个整数n和m,从小到大输出选取m个数的排列</em></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font color="blue" size="4">搜索的时候剪枝，如果已经选的数超过了m个或者即使再选上剩余的数也不够m个，此问题无解</font></p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int n,m,idx;</div><div class="line">vector&lt;int&gt; v,data[1000000];</div><div class="line">void dfs(int x)</div><div class="line">&#123;</div><div class="line">    if(v.size()&gt;m || v.size()+n-x+1&lt;m) return;  //剪枝</div><div class="line">    if(x==n+1)&#123;</div><div class="line">        for(int i=0;i&lt;v.size();++i)</div><div class="line">            data[idx].push_back(v[i]);</div><div class="line">        idx++;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    dfs(x+1);</div><div class="line">    v.push_back(x);</div><div class="line">    dfs(x+1);</div><div class="line">    v.pop_back();</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::ios::sync_with_stdio(false);</div><div class="line">    cout.tie(0);</div><div class="line">    std::cin&gt;&gt;n&gt;&gt;m;</div><div class="line">    dfs(1);</div><div class="line">    for(int i=idx-1;i&gt;=0;--i)</div><div class="line">    &#123;</div><div class="line">        for(vector&lt;int&gt;::iterator it=data[i].begin(); it!=data[i].end();++it)</div><div class="line">        &#123;</div><div class="line">            std::cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</div><div class="line">        &#125;</div><div class="line">        std::cout&lt;&lt;&apos;\n&apos;;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/998/C" target="_blank" rel="external">题目链接</a></p>
+<h1 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>把1到n(n&lt;10)个整数排成一行后随机打乱顺序，输出所有可能的次序</em></p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><em>C++ STL的库函数<font color="red">next_permutation()</font><br><strong>作用:</strong>按照从小到大的顺序输出排列</em></p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int n;</div><div class="line">int data[20];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=1;i&lt;=n;++i) data[i]=i;</div><div class="line">    do&#123;</div><div class="line">        for(int i=1;i&lt;=n;++i)</div><div class="line">            printf(&quot;%d &quot;,data[i]);</div><div class="line">        puts(&quot;&quot;);</div><div class="line">    &#125;while(next_permutation(data+1,data+1+n));</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/背包问题/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/bbwt.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/bbwt.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                背包问题</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/递推/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/dt.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/dt.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                递推</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

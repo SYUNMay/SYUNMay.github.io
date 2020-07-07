@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">分类 | Sunny</title>
+  <title itemprop="name">递归与递推 | Sunny</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,61 +371,299 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/img/banner/writing.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        undefined</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-      <!-- .entry-content -->
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/LanQiao/%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/LanQiao/%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      递归与递推</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-1<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
+      
+      <!-- 添加完成 -->
+    </header>
+  </div>
+
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>本博客题目来源于<a href="https://www.acwing.com/" target="_blank" rel="external">Acwing</a>,个人学习总结。<br><a href="https://www.acwing.com/activity/content/problem/content/1545/1/" target="_blank" rel="external">递归实现指数型枚举</a></p>
+<h1 id="递归实现指数型枚举"><a href="#递归实现指数型枚举" class="headerlink" title="递归实现指数型枚举"></a>递归实现指数型枚举</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>从 1 ~ n 这 n 个整数中随机选取任意多个，输出所有可能的选择方案。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>输入一个整数n。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>每行输出一种方案。<br>同一行内的数必须升序排列，相邻两个数用恰好1个空格隔开。<br>对于没有选任何数的方案，输出空行。<br>本题有自定义校验器（SPJ），各行（不同方案）之间的顺序任意。</p>
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1&lt;=n&lt;=15</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>3</p>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>3<br>2<br>2 3<br>1<br>1 3<br>1 2<br>1 2 3</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="blue">递归搜索解空间,到搜索边界输出,每个数只有两种状态,选或是不选,选就记录一下。</font></p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">using namespace std;</div><div class="line">vector&lt; int&gt;v;</div><div class="line">int n;</div><div class="line">void dfs(int x)</div><div class="line">&#123;</div><div class="line">    if(x==n+1)  // 递归边界</div><div class="line">    &#123;</div><div class="line">        for(int i=0;i &lt; v.size();++i) printf(&quot;%d &quot;,v[i]);</div><div class="line">        puts(&quot;&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    //不选</div><div class="line">    dfs(x+1);</div><div class="line">    //选</div><div class="line">    v.push_back(x);</div><div class="line">    dfs(x+1);</div><div class="line">    //还原现场</div><div class="line">    v.pop_back();</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %d&quot;,&amp;n);</div><div class="line">    dfs(1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/problem/content/96/" target="_blank" rel="external">递归实现排列型枚举</a></p>
+<h1 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>把 1 ~ n 这 n 个整数排成一行后随机打乱顺序，输出所有可能的次序。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>一个整数n。</p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>按照从小到大的顺序输出所有方案，每行1个。<br>首先，同一行相邻两个数用一个空格隔开。<br>其次，对于两个不同的行，对应下标的数 一一 比较，字典序较小的排在前面。</p>
+<h2 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤n≤9</p>
+<h2 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>3</p>
+<h2 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>1 2 3<br>1 3 2<br>2 1 3<br>2 3 1<br>3 1 2<br>3 2 1</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><img src="http://edviv.gitee.io/images_bed/images/LanQiao/YXC/Check/DFS1.png" alt=""></p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">using namespace std;</div><div class="line">int n;</div><div class="line">bool vis[20];</div><div class="line">vector &lt;int&gt; v;</div><div class="line">void dfs(int x)</div><div class="line">&#123;</div><div class="line">    if(x&gt;n) //递归边界</div><div class="line">    &#123;</div><div class="line">        for(int i = 0;i &lt; v.size(); ++i) printf(&quot;%d &quot;,v[i]);</div><div class="line">        puts(&quot;&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    //解空间</div><div class="line">    for(int i = 1; i &lt;= n; ++i)</div><div class="line">    &#123;</div><div class="line">        if(vis[i]) continue;  //当前这个数已经选择则不选</div><div class="line">        // 选择 i </div><div class="line">        v.push_back(i);   </div><div class="line">        vis[i]=true;</div><div class="line">        // 递归搜索</div><div class="line">        dfs(x+1);</div><div class="line">        //现场还原</div><div class="line">        v.pop_back();</div><div class="line">        vis[i]=false;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    dfs(1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/activity/content/problem/content/1549/1/" target="_blank" rel="external">简单斐波那契</a></p>
+<h1 id="简单斐波那契"><a href="#简单斐波那契" class="headerlink" title="简单斐波那契"></a>简单斐波那契</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>以下数列0 1 1 2 3 5 8 13 21 …被称为斐波纳契数列。<br>这个数列从第3项开始，每一项都等于前两项之和。<br>输入一个整数N，请你输出这个序列的前N项。</p>
+<h2 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>一个整数N。</p>
+<h2 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>在一行中输出斐波那契数列的前N项，数字之间用空格隔开。</p>
+<h2 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>0&lt;N&lt;46</p>
+<h2 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>5</p>
+<h2 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>0 1 1 2 3</p>
+<h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">f[i] = f[i-1] + f[i-2] (1<i<n)< font=""></i<n)<></font></p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=50;</div><div class="line">int f[50],n;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    f[1]=1;</div><div class="line">    if(n&gt;1)</div><div class="line">        for(int i=2;i &lt; n;++i) f[i]=f[i-1]+f[i-2];</div><div class="line">    for(int i=0;i &lt; n;++i) printf(&quot;%d &quot;,f[i]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/problem/content/97/" target="_blank" rel="external">费解的开关</a></p>
+<h1 id="费解的开关"><a href="#费解的开关" class="headerlink" title="费解的开关"></a>费解的开关</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>你玩过“拉灯”游戏吗？25盏灯排成一个5x5的方形。每一个灯都有一个开关，游戏者可以改变它的状态。每一步，游戏者可以改变某一个灯的状态。游戏者改变一个灯的状态会产生连锁反应：和这个灯上下左右相邻的灯也要相应地改变其状态。<br>我们用数字“1”表示一盏开着的灯，用数字“0”表示关着的灯。下面这种状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">10111</div><div class="line">01101</div><div class="line">10111</div><div class="line">10000</div><div class="line">11011</div></pre></td></tr></table></figure></p>
+<p>在改变了最左上角的灯的状态后将变成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">01111</div><div class="line">11101</div><div class="line">10111</div><div class="line">10000</div><div class="line">11011</div></pre></td></tr></table></figure></p>
+<p>再改变它正中间的灯后状态将变成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">01111</div><div class="line">11001</div><div class="line">11001</div><div class="line">10100</div><div class="line">11011</div></pre></td></tr></table></figure></p>
+<p>给定一些游戏的初始状态，编写程序判断游戏者是否可能在6步以内使所有的灯都变亮。</p>
+<h2 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>第一行输入正整数n，代表数据中共有n个待解决的游戏初始状态。<br>以下若干行数据分为n组，每组数据有5行，每行5个字符。每组数据描述了一个游戏的初始状态。各组数据间用一个空行分隔。</p>
+<h2 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>一共输出n行数据，每行有一个小于等于6的整数，它表示对于输入数据中对应的游戏状态最少需要几步才能使所有灯变亮。<br>对于某一个游戏初始状态，若6步以内无法使所有灯变亮，则输出“-1”。</p>
+<h2 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>0&lt; n ≤500</p>
+<h2 id="输入样例-3"><a href="#输入样例-3" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>3<br>00111<br>01011<br>10001<br>11010<br>11100</p>
+<p>11101<br>11101<br>11110<br>11111<br>11111</p>
+<p>01111<br>11111<br>11111<br>11111<br>11111</p>
+<h2 id="输出样例-3"><a href="#输出样例-3" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>3<br>2<br>-1</p>
+<h2 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">1.每一行的灯光只按一次。</font></p>
+<p><font size="4" color="red">2.每一行开关的操作,完全被前一行的灯的亮灭状态所决定。</font></p>
+<p><font size="5" color="red">按法与灯是否开或者关没有影响</font></p>
+<h2 id="AC代码-3"><a href="#AC代码-3" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#define INF 0x3f3f3f3f</div><div class="line">using namespace std;</div><div class="line">const int N=10;</div><div class="line">int a[N][N],b[N][N];</div><div class="line">int dir[6][2]=&#123;-1,0,0,0,1,0,0,1,0,-1&#125;;</div><div class="line">bool inbound(int x,int l,int r) //判断位置是否合法</div><div class="line">&#123;</div><div class="line">    if(x&lt;l || x&gt;r) return false;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line">bool check()  //判断灯是否全亮</div><div class="line">&#123;</div><div class="line">    for(int i=1;i&lt;=5;++i)</div><div class="line">        for(int j=1;j&lt;=5;++j)</div><div class="line">            if(!b[i][j]) return false; //1表示亮，0表示关</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line">void Change(int x,int y)  //转变函数</div><div class="line">&#123;</div><div class="line">    for(int i=0;i&lt;5;++i)</div><div class="line">    &#123;</div><div class="line">        int tx=x+dir[i][0],ty=y+dir[i][1];</div><div class="line">        if(!inbound(tx,1,5)||!inbound(ty,1,5)) continue;</div><div class="line">        b[tx][ty]^=1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">void work()</div><div class="line">&#123;</div><div class="line">    int ans=INF;</div><div class="line">    for(int i=1;i&lt;=1&lt;&lt;5;++i)  //32种状态,二进制状态枚举</div><div class="line">    &#123;</div><div class="line">        memcpy(b,a,sizeof(a));  //复制</div><div class="line">        int step=0;</div><div class="line">        for(int j=1;j&lt;=5;++j)  //枚举第一行</div><div class="line">        &#123;</div><div class="line">            if(!(i&gt;&gt;(j-1)&amp;1))  //第一行的第j个灯是关着的,0按，1不按</div><div class="line">            &#123;</div><div class="line">                Change(1,j);</div><div class="line">                step++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int j=1;j&lt;=4;++j)  //剩下i+1行</div><div class="line">            for(int k=1;k&lt;=5;++k)</div><div class="line">                if(!b[j][k])</div><div class="line">                &#123;</div><div class="line">                    step++;</div><div class="line">                    Change(j+1,k);</div><div class="line">                &#125;</div><div class="line">            if(check()) ans=min(ans,step);</div><div class="line">    &#125;</div><div class="line">    if(ans&gt;6) puts(&quot;-1&quot;);</div><div class="line">    else printf(&quot;%d\n&quot;,ans);</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int t;</div><div class="line">    scanf(&quot; %d&quot;,&amp;t);</div><div class="line">    while(t--)</div><div class="line">    &#123;</div><div class="line">        getchar();</div><div class="line">        char ch;</div><div class="line">        for(int i=1;i&lt;=5;++i)&#123;</div><div class="line">            for(int j=1;j&lt;=5;++j)</div><div class="line">            &#123;</div><div class="line">                scanf(&quot; %c&quot;,&amp;ch);</div><div class="line">                a[i][j]=ch-&apos;0&apos;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        getchar();</div><div class="line">        work();</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/activity/content/problem/content/1547/1/" target="_blank" rel="external">递归实现组合型枚举</a></p>
+<h1 id="递归实现组合型枚举"><a href="#递归实现组合型枚举" class="headerlink" title="递归实现组合型枚举"></a>递归实现组合型枚举</h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>从 1 ~ n 这 n 个整数中随机选出 m 个，输出所有可能的选择方案。</p>
+<h2 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>两个整数 n，m，在同一行用空格隔开。</p>
+<h2 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>按照从小到大的顺序输出所有方案，每行1个。<br>首先，同一行内的数升序排列，相邻两个数用一个空格隔开。<br>其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面（例如1 3 5 7排在1 3 6 8前面）。</p>
+<h2 id="数据范围-4"><a href="#数据范围-4" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>n&gt;0 ,<br>0≤m≤n ,<br>n+(n−m)≤25</p>
+<h2 id="输入样例-4"><a href="#输入样例-4" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>5 3</p>
+<h2 id="输出样例-4"><a href="#输出样例-4" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>1 2 3<br>1 2 4<br>1 2 5<br>1 3 4<br>1 3 5<br>1 4 5<br>2 3 4<br>2 3 5<br>2 4 5<br>3 4 5 </p>
+<h2 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">递归搜索,剪枝</font></p>
+<h2 id="AC代码-4"><a href="#AC代码-4" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e5+7;</div><div class="line">vector&lt;int&gt;v,ans[maxn];</div><div class="line">int n,m,idx;</div><div class="line">void dfs(int x)</div><div class="line">&#123;</div><div class="line">    if(v.size()&gt;m||v.size()+(n-x+1)&lt;m) return; //剪枝</div><div class="line">    if(x==n+1)  //递归边界</div><div class="line">    &#123;</div><div class="line">        for(int i=0;i&lt;v.size();++i) ans[idx].push_back(v[i]);</div><div class="line">        idx++;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    dfs(x+1);</div><div class="line">    v.push_back(x);</div><div class="line">    dfs(x+1);</div><div class="line">    v.pop_back();</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %d%d&quot;,&amp;n,&amp;m);</div><div class="line">    dfs(1);</div><div class="line">    </div><div class="line">    for(int i=idx-1;i&gt;=0;--i)&#123;</div><div class="line">        for(vector&lt;int&gt;::iterator it=ans[i].begin();it!=ans[i].end();++it)&#123;</div><div class="line">            cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</div><div class="line">        &#125;</div><div class="line">        puts(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int ans[maxn],n,m;</div><div class="line">void dfs(int x,int s)</div><div class="line">&#123;</div><div class="line">    if(x+n-s&lt;m) return; //剪枝</div><div class="line">    if(x==m+1)</div><div class="line">    &#123;</div><div class="line">        for(int i=1;i&lt;=m;++i) printf(&quot;%d &quot;,ans[i]);</div><div class="line">        puts(&quot;&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    for(int i=s;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        ans[x]=i;</div><div class="line">        dfs(x+1,i+1);</div><div class="line">        // 恢复现场</div><div class="line">        ans[x]=0;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</div><div class="line">    dfs(1,1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/activity/content/problem/content/1551/1/" target="_blank" rel="external">带分数</a></p>
+<h1 id="带分数"><a href="#带分数" class="headerlink" title="带分数"></a>带分数</h1><h2 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>100 可以表示为带分数的形式：100=3+69258714<br>还可以表示为：100=82+3546197<br>注意特征：带分数中，数字 1 ∼ 9 分别出现且只出现一次（不包含 0）。<br>类似这样的带分数，100 有 11 种表示法。</p>
+<h2 id="输入格式-5"><a href="#输入格式-5" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>一个正整数。</p>
+<h2 id="输出格式-5"><a href="#输出格式-5" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出输入数字用数码 1∼9 不重复不遗漏地组成带分数表示的全部种数。</p>
+<h2 id="数据范围-5"><a href="#数据范围-5" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤N&lt;10^6</p>
+<h2 id="输入样例-5"><a href="#输入样例-5" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>100</p>
+<h2 id="输出样例-5"><a href="#输出样例-5" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>11</p>
+<h2 id="解题思路-5"><a href="#解题思路-5" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">n = a + b/c –&gt; nc = ac + b</font></p>
+<p><font size="4" color="red">枚举 a; 枚举 c; 判断 b 是否成立。</font></p>
+<h2 id="AC代码-5"><a href="#AC代码-5" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=15;</div><div class="line">typedef long long ll;</div><div class="line">int n,ans;</div><div class="line">bool vis[maxn],t[maxn];</div><div class="line">bool check(int a,int c)</div><div class="line">&#123;</div><div class="line">    ll b=(ll)(n-a)*c;  //求b</div><div class="line">    if(!a || !b || !c) return false;  //a!=0,b!=0,c!=0</div><div class="line">    memcpy(t,vis,sizeof vis);  //复制</div><div class="line">    while(b)  //枚举b的每一位</div><div class="line">    &#123;</div><div class="line">        ll x=b%10; </div><div class="line">        b/=10;</div><div class="line">        if(!x || t[x]) return false;</div><div class="line">        t[x]=1;</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=9;++i)  </div><div class="line">        if(!t[i]) return false;  //有没出现过的数字</div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line">void dfs_c(int s,int a,int c)</div><div class="line">&#123;</div><div class="line">    if(check(a,c)) ans++;  //满足条件</div><div class="line">    for(int i=1;i&lt;=9;++i)   </div><div class="line">        if(!vis[i])   //未出现过</div><div class="line">        &#123;</div><div class="line">            vis[i]=1;  // 记录</div><div class="line">            dfs_c(s+1,a,c*10+i);  //搜索</div><div class="line">            vis[i]=0;  //回溯</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">void dfs_a(int s,int a) //s:当前状态, a:枚举的数字</div><div class="line">&#123;</div><div class="line">    if(a&gt;=n) return;   //边界</div><div class="line">    if(a) dfs_c(s,a,0);  // a!=0</div><div class="line">    for(int i=1;i&lt;=9;++i)</div><div class="line">        if(!vis[i])   //未出现过</div><div class="line">        &#123;</div><div class="line">            vis[i]=1;  //记录</div><div class="line">            dfs_a(s+1,a*10+i); //搜索</div><div class="line">            vis[i]=0;  //回溯</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %d&quot;,&amp;n);</div><div class="line">    dfs_a(0,0);</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/problem/content/118/" target="_blank" rel="external">飞行员兄弟</a></p>
+<h1 id="飞行员兄弟"><a href="#飞行员兄弟" class="headerlink" title="飞行员兄弟"></a>飞行员兄弟</h1><h2 id="题目大意-6"><a href="#题目大意-6" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>“飞行员兄弟”这个游戏，需要玩家顺利的打开一个拥有16个把手的冰箱。<br>已知每个把手可以处于以下两种状态之一：打开或关闭。<br>只有当所有把手都打开时，冰箱才会打开。<br>把手可以表示为一个4х4的矩阵，您可以改变任何一个位置[i,j]上把手的状态。<br>但是，这也会使得第i行和第j列上的所有把手的状态也随着改变。<br>请你求出打开冰箱所需的切换把手的次数最小值是多少。</p>
+<h2 id="输入格式-6"><a href="#输入格式-6" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>输入一共包含四行，每行包含四个把手的初始状态。<br>符号“+”表示把手处于闭合状态，而符号“-”表示把手处于打开状态。<br>至少一个手柄的初始状态是关闭的。</p>
+<h2 id="输出格式-6"><a href="#输出格式-6" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>第一行输出一个整数N，表示所需的最小切换把手次数。<br>接下来N行描述切换顺序，每行输入两个整数，代表被切换状态的把手的行号和列号，数字之间用空格隔开。<br>注意：如果存在多种打开冰箱的方式，则按照优先级整体从上到下，同行从左到右打开。</p>
+<h2 id="数据范围-6"><a href="#数据范围-6" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤i,j≤4</p>
+<h2 id="输入样例-6"><a href="#输入样例-6" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-+--</div><div class="line">----</div><div class="line">----</div><div class="line">-+--</div></pre></td></tr></table></figure>
+<h2 id="输出样例-6"><a href="#输出样例-6" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>6<br>1 1<br>1 3<br>1 4<br>4 1<br>4 3<br>4 4</p>
+<h2 id="解题思路-6"><a href="#解题思路-6" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">1.二进制状态枚举,总共有1&lt;<16种情况。< font=""></16种情况。<></font></p>
+<p><font size="4" color="red">2.开关的关闭或者打开与其自身的状态没有关系。</font></p>
+<h2 id="AC代码-6"><a href="#AC代码-6" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#define f first</div><div class="line">#define s second</div><div class="line">#define pb push_back</div><div class="line">using namespace std;</div><div class="line">typedef pair&lt;int,int&gt;PII;</div><div class="line">const int maxn=10;</div><div class="line">char a[maxn][maxn],t[maxn][maxn];</div><div class="line">void turn(int x,int y)  //转换</div><div class="line">&#123;</div><div class="line">    for(int i=0;i&lt;4;++i)</div><div class="line">    &#123;</div><div class="line">        if(a[x][i]==&apos;-&apos;) a[x][i]=&apos;+&apos;;</div><div class="line">        else a[x][i]=&apos;-&apos;;</div><div class="line">        if(a[i][y]==&apos;-&apos;) a[i][y]=&apos;+&apos;;</div><div class="line">        else a[i][y]=&apos;-&apos;;</div><div class="line">    &#125;</div><div class="line">    if(a[x][y]==&apos;-&apos;) a[x][y]=&apos;+&apos;;</div><div class="line">    else a[x][y]=&apos;-&apos;;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    for(int i=0;i&lt;4;++i) scanf(&quot; %s&quot;,a[i]);</div><div class="line">    vector&lt;PII&gt;ans;</div><div class="line">    for(int op=0;op&lt;(1&lt;&lt;16);++op)</div><div class="line">    &#123;</div><div class="line">        memcpy(t,a,sizeof t);  //备份</div><div class="line">        vector&lt;PII&gt;temp;   //临时变量</div><div class="line">        for(int i=0;i&lt;4;++i)  //操作</div><div class="line">            for(int j=0;j&lt;4;++j)</div><div class="line">                if(op&gt;&gt;(i*4+j)&amp;1)</div><div class="line">                &#123;</div><div class="line">                    temp.pb(&#123;i,j&#125;);</div><div class="line">                    turn(i,j);</div><div class="line">                &#125;</div><div class="line">        bool ok=true;  //判断灯是否全亮的标志</div><div class="line">        for(int i=0;i&lt;4;++i)</div><div class="line">            for(int j=0;j&lt;4;++j)</div><div class="line">                if(a[i][j]==&apos;+&apos;) ok=false;</div><div class="line">        if(ok&amp;&amp;(ans.empty()||ans.size()&gt;temp.size())) ans=temp;</div><div class="line">        memcpy(a,t,sizeof a);</div><div class="line">    &#125;</div><div class="line">    int len=ans.size();</div><div class="line">    printf(&quot;%d\n&quot;,len);</div><div class="line">    for(int i=0;i&lt;len;++i) printf(&quot;%d %d\n&quot;,ans[i].f+1,ans[i].s+1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.acwing.com/activity/content/problem/content/1553/1/" target="_blank" rel="external">翻硬币</a></p>
+<h1 id="翻硬币"><a href="#翻硬币" class="headerlink" title="翻硬币"></a>翻硬币</h1><h2 id="题目大意-7"><a href="#题目大意-7" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>小明正在玩一个“翻硬币”的游戏。<br>桌上放着排成一排的若干硬币。我们用 * 表示正面，用 o 表示反面（是小写字母，不是零）。<br>比如，可能情形是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">**oo***oooo</div></pre></td></tr></table></figure></p>
+<p>如果同时翻转左边的两个硬币，则变为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oooo***oooo</div></pre></td></tr></table></figure></p>
+<p>现在小明的问题是：如果已知了初始状态和要达到的目标状态，每次只能同时翻转相邻的两个硬币,那么对特定的局面，最少要翻动多少次呢？<br>我们约定：把翻动相邻的两个硬币叫做一步操作。</p>
+<h2 id="输入格式-7"><a href="#输入格式-7" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>两行等长的字符串，分别表示初始状态和要达到的目标状态。</p>
+<h2 id="输出格式-7"><a href="#输出格式-7" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>一个整数，表示最小操作步数</p>
+<h2 id="数据范围-7"><a href="#数据范围-7" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>输入字符串的长度均不超过100。<br>数据保证答案一定有解。</p>
+<h2 id="输入样例-7"><a href="#输入样例-7" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">**********</div><div class="line">o****o****</div></pre></td></tr></table></figure>
+<h2 id="输出样例-7"><a href="#输出样例-7" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5</div></pre></td></tr></table></figure>
+<h2 id="解题思路-7"><a href="#解题思路-7" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">贪心思路:枚举对应位置是否相等,不等就改变当前状态和下一个状态,最后输出答案。</font></p>
+<p><font size="4" color="red"></font></p>
+<h2 id="AC代码-7"><a href="#AC代码-7" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=107;</div><div class="line">char s[maxn],p[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %s %s&quot;,s,p);</div><div class="line">    int ans=0;</div><div class="line">    int lens=strlen(s);</div><div class="line">    for(int i=0,j=0;i&lt;lens;++i,++j)</div><div class="line">           if(s[i]!=p[j])</div><div class="line">           &#123;</div><div class="line">               ans++;</div><div class="line">               if(s[i+1]==&apos;*&apos;) s[i+1]=&apos;o&apos;;</div><div class="line">               else s[i+1]=&apos;*&apos;;</div><div class="line">           &#125;</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/非递归实现组合型枚举/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/fdg.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/fdg.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                非递归实现组合型枚举</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/05/27/Hexo-Theme-Sakura/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/img/startdash/sakura.md.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/img/startdash/sakura.md.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Hexo-Theme-Sakura</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
