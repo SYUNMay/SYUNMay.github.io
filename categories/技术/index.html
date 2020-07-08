@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">Category: 技术 | Sunny</title>
+  <title itemprop="name">Category: 技术 | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -660,28 +660,10 @@
                 </a>
                 
                 
-                <a href="/categories/算法/" title="算法: 7">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">算法
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/题目/" title="题目: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">题目
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/蓝桥杯/" title="蓝桥杯: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">蓝桥杯
+                            style="background-color: #F5EEF8;">蓝桥杯
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -729,7 +711,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"技术","max":8},{"name":"算法","max":8},{"name":"题目","max":8},{"name":"蓝桥杯","max":8}],
+            indicator: [{"name":"技术","max":2},{"name":"蓝桥杯","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -740,7 +722,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,7,4,1],
+                    value : [1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -794,7 +776,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -806,10 +788,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -850,11 +832,11 @@
 </script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<!--
+
 <i class="fa fa-fire" aria-hidden="true" style="color: #ff9999;display:inline-block"></i>
   <span >总访问量: <span id="busuanzi_value_site_pv" style="color:#ff9999;"></span>次
   </span>
--->
+
 <div class="powered-by">
 <!--
 <span style="color: #b9b9b9;padding-left: 20px;">
@@ -863,7 +845,7 @@
 <!--
 <i class="fa fa-line-chart" aria-hidden="true" style="color: #ff9999;display:inline-block"></i> 博客全站共: <span class="post-count" style="color:#ff9999;"></span>字</span>
 -->
-
+<!--
   <i class="fa fa-fire" aria-hidden="true" style="color: #ff9999;display:inline-block"></i>
   <span >总访问量: <span id="busuanzi_value_site_pv" style="color:#ff9999;"></span>次
   </span>
@@ -871,6 +853,7 @@
   <span id="busuanzi_container_site_uv" style="color: #ff9999;display:inline-block">总访问人数： <span id="busuanzi_value_site_uv" style="color:#ff9999;"></span>人</span>
   </span>
 </div>
+-->
 
     <div class="footertext">
       <div class="img-preload">
@@ -932,8 +915,10 @@
 <script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
 <script src="/js/botui.js"></script>
 <!-- 不蒜子 网页计数器 -->
+
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+
 <script type="text/javascript">
 /* <![CDATA[ */
 if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
