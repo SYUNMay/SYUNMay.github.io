@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">Hexo-Theme-Sakura | Edviv</title>
+  <title itemprop="name">递推 | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -377,11 +377,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/img/startdash/sakura.md.png);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/img/startdash/sakura.md.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/dt.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/dt.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Hexo-Theme-Sakura</h1>
+      递推</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -393,7 +393,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-5-27<span class="bull">
+        2020-6-29<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
       <!-- 开始添加字数统计-->
@@ -404,7 +404,7 @@
 	        <i class="fa fa-keyboard-o"></i>
 	        <span class="post-meta-item-text">  字数统计: </span>
 	        <!-- 安装插件npm install hexo-wordcount --save -->
-	        <span class="post-count">2.6k字</span>
+	        <span class="post-count">729字</span>
 	    </span>
 	</span>
 	
@@ -413,7 +413,7 @@
 	    <span class="post-meta-item-icon">
 	        <i class="fa fa-hourglass-half"></i>
 	        <span class="post-meta-item-text">  阅读时长: </span>
-	        <span class="post-count">11分</span>
+	        <span class="post-count">3分</span>
 	    </span>
 	</span>
 </div>
@@ -431,350 +431,19 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>hexo-theme-sakura主题 <a href="https://github.com/honjun/hexo-theme-sakura/blob/master/README.md" target="_blank" rel="external">English document</a></p>
-<p>基于WordPress主题<a href="https://github.com/mashirozx/Sakura/" target="_blank" rel="external">Sakura</a>修改成Hexo的主题。</p>
-<p><a href="https://sakura.hojun.cn" target="_blank" rel="external">demo预览</a></p>
-<p>正在开发中……</p>
-<p><img src="https://wx3.sinaimg.cn/large/006bYVyvly1g069tuf42oj312w0m8ndq.jpg" alt=""></p>
-<h2 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h2><p>若你是使用者，加群QQ: 801511924</p>
-<p>若你是创作者，加群QQ: 194472590</p>
-<h2 id="主题特性"><a href="#主题特性" class="headerlink" title="主题特性"></a>主题特性</h2><ul>
-<li>首页大屏视频</li>
-<li>首页随机封面</li>
-<li>图片懒加载</li>
-<li>valine评论</li>
-<li>fancy-box相册</li>
-<li>pjax支持，音乐不间断</li>
-<li>aplayer音乐播放器</li>
-<li>多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）</li>
-</ul>
-<h2 id="赞赏作者"><a href="#赞赏作者" class="headerlink" title="赞赏作者"></a>赞赏作者</h2><p>如果喜欢hexo-theme-sakura主题，可以考虑资助一下哦~非常感激！</p>
-<p><a href="https://www.paypal.me/hojuncn" target="_blank" rel="external">paypal</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg" target="_blank" rel="external">Alipay 支付宝</a> | <a href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanSQ.jpg" target="_blank" rel="external">WeChat Pay 微信支付</a></p>
-<h2 id="未完善的使用教程"><a href="#未完善的使用教程" class="headerlink" title="未完善的使用教程"></a>未完善的使用教程</h2><p>那啥？老实说我目前也不是很有条理233333333~</p>
-<h2 id="1、主题下载安装"><a href="#1、主题下载安装" class="headerlink" title="1、主题下载安装"></a>1、主题下载安装</h2><p><a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="external">hexo-theme-sakura</a>建议下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦咯。</p>
-<p>下载好后解压到博客根目录（不是主题目录哦，重复的选择替换）。接着在命令行（cmd、bash）运行<code>npm i</code>安装依赖。</p>
-<h2 id="2、主题配置"><a href="#2、主题配置" class="headerlink" title="2、主题配置"></a>2、主题配置</h2><h3 id="博客根目录下的-config配置"><a href="#博客根目录下的-config配置" class="headerlink" title="博客根目录下的_config配置"></a>博客根目录下的_config配置</h3><p>站点</p>
-<pre>
-<code>
-# Site
-title: 你的站点名
-subtitle:
-description: 站点简介
-keywords:
-author: 作者名
-language: zh-cn
-timezone:
-</code>
-</pre>
-
-<p>部署</p>
-<pre>
-  <code>
-deploy:
-  type: git
-  repo: 
-    github: 你的github仓库地址
-    # coding: 你的coding仓库地址
-  branch: master
-  </code>
-</pre>
-
-<p>备份 （使用hexo b发布备份到远程仓库）</p>
-<pre>
-  <code>
-backup:
-  type: git
-  message: backup my blog of https://honjun.github.io/
-  repository:
-    # 你的github仓库地址,备份分支名  （建议新建backup分支）
-    github: https://github.com/honjun/honjun.github.io.git,backup
-    # coding: https://git.coding.net/hojun/hojun.git,backup
-    </code>
-</pre>
-
-<h3 id="主题目录下的-config配置"><a href="#主题目录下的-config配置" class="headerlink" title="主题目录下的_config配置"></a>主题目录下的_config配置</h3><p>其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分</p>
-<pre>
-  <code>
-  site name
-  #站点名 【改】
-  prefixName: さくら荘その
-  siteName: hojun
-  </code>
-</pre>
-
-<pre>
-  <code>
-    #favicon and site master avatar
-    #站点的favicon和头像 输入图片路径（下面的配置是都是cdn的相对路径，没有cdn请填写完整路径，
-    建议使用jsdeliver搭建一个cdn啦，先去下载我的cdn替换下图片就行了，简单方便~）【改】
-    favicon: /images/favicon.ico
-    avatar: /img/custom/avatar.jpg
-  </code>
-</pre> 
-
-<pre>
-  <code>
-    #站点url 【改】
-    url: https://sakura.hojun.cn
-    #站点介绍（或者说是个人签名）【改】
-    description: Live your life with passion! With some drive!
-    #站点cdn，没有就为空 【改】  若是cdn为空，一些图片地址就要填完整地址了，比如之前avatar就要填
-    https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg
-    cdn: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6
-    </code>
-</pre>
-
-<pre>
-  <code>
-    #开启pjax 【选】
-    pjax: 1
-    #站点首页的公告信息 【改】
-    notice: hexo-Sakura主题已经开源，目前正在开发中...
-    #懒加载的加载中图片 【选】
-    lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg
-  </code>
-</pre>
-
-<pre>
-  <code>
-    #站点菜单配置 【选】
-    menus:
-    首页: { path: /, fa: fa-fort-awesome faa-shake }
-      归档: { path: /archives, fa: fa-archive faa-shake, submenus: { 
-      技术: {path: /categories/技术/, fa: fa-code }, 
-      生活: {path: /categories/生活/, fa: fa-file-text-o }, 
-      资源: {path: /categories/资源/, fa: fa-cloud-download }, 
-      随想: {path: /categories/随想/, fa: fa-commenting-o },
-      转载: {path: /categories/转载/, fa: fa-book }
-      } }
-    清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
-      书单: {path: /tags/悦读/, fa: fa-th-list faa-bounce }, 
-      番组: {path: /bangumi/, fa: fa-film faa-vertical }, 
-      歌单: {path: /music/, fa: fa-headphones },
-      图集: {path: /tags/图集/, fa: fa-photo }
-    } }
-    留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
-    友人帐: { path: /links/, fa: fa-link faa-shake }
-    赞赏: { path: /donate/, fa: fa-heart faa-pulse }
-    关于: { path: /, fa: fa-leaf faa-wrench , submenus: { 
-      我？: {path: /about/, fa: fa-meetup}, 
-      主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
-      Lab: {path: /lab/, fa: fa-cogs },
-    } }
-    客户端: { path: /client/, fa: fa-android faa-vertical }
-    RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
-  </code>
-</pre>
-
-<pre>
-  <code>
-    Home page sort type: -1: newer first，1: older first. 【非】
-    homePageSortType: -1
-    Home page article shown number) 【非】
-    homeArticleShown: 10
-    #背景图片 【选】
-    bgn: 8
-    startdash面板 url, title, desc img 【改】
-    startdash: 
-      - {url: /theme-sakura/, title: Sakura, desc: 本站 hexo 主题, img: /img/startdash/sakura.md.png}
-      - {url: http://space.bilibili.com/271849279, title: Bilibili, desc: 博主的b站视频, img: /img/startdash/bilibili.jpg}
-      - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
-      # your site build time or founded date
-      # 你的站点建立日期 【改】
-      siteBuildingTime: 07/17/2018
-  </code>
-</pre>
-
-<pre>
-  <code>
-    # 社交按钮(social)  url, img PC端配置 【改】
-    social:
-      github: {url: http://github.com/honjun, img: /img/social/github.png}
-      sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
-      wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
-      zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
-      email: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/email.svg}
-      wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
-    # 社交按钮(msocial)  url, img 移动端配置 【改】
-    msocial:
-      github: {url: http://github.com/honjun, fa: fa-github, color: 333}
-      weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
-      qq: {url: https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes, fa: fa-qq, color: 25c6fe}
-  </code>
-</pre>
-
-<pre>
-  <code>
-    # 赞赏二维码（其中wechatSQ是赞赏单页面的赞赏码图片）【改】
-    donate:
-    alipay: /img/custom/donate/AliPayQR.jpg
-    wechat: /img/custom/donate/WeChanQR.jpg
-    wechatSQ: /img/custom/donate/WeChanSQ.jpg
-  </code>
-</pre>
-
-<pre>
-  <code>
-    # 首页视频地址为https://cdn.jsdelivr.net/gh/honjun/hojun@1.2/Unbroken.mp4，配置如下 【改】
-    movies:
-    url: https://cdn.jsdelivr.net/gh/honjun/hojun@1.2
-    # 多个视频用逗号隔开，随机获取。支持的格式目前已知MP4,Flv。其他的可以试下，不保证有用
-    name: Unbroken.mp4
-  </code>
-</pre>
-
-<pre>
-  <code>
-# 左下角aplayer播放器配置 主要改id和server这两项，修改详见[aplayer文档] 【改】
-aplayer: 
-  id: 2660651585
-  server: netease
-  type: playlist
-  fixed: true
-  mini: false
-  autoplay: false
-  loop: all
-  order: random
-  preload: auto
-  volume: 0.7
-  mutex: true
-# Valine评论配置【改】
-valine: true
-v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
-v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
-</code>
-</pre>
-
-<h2 id="分类页和标签页配置"><a href="#分类页和标签页配置" class="headerlink" title="分类页和标签页配置"></a>分类页和标签页配置</h2><h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b0gucy9j31060jih76.jpg" alt=""></p>
-<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07azb2399j31040jgazs.jpg" alt=""></p>
-<p>配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。</p>
-<pre>
-  <code>
-#category
-# 按分类名创建
-技术:
-    #中文标题
-    zh: 野生技术协会 
-    # 英文标题
-    en: Geek – Only for Love
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg
-生活:
-    zh: 生活
-    en: live
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/writing.jpg
-
-#tag
-# 标签名即是标题
-悦读:
-    # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg
-  </code>
-</pre>
-
-<h2 id="单页面封面配置"><a href="#单页面封面配置" class="headerlink" title="单页面封面配置"></a>单页面封面配置</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b1pi619j31080jge4u.jpg" alt=""><br>如留言板页面页面，位于source下的comment下，打开index.md如下：</p>
-<pre>
-  <code>
-title: comment
-date: 2018-12-20 23:13:48
-keywords: 留言板
-description: 
-comments: true
-# 在这里配置单页面头部图片，自定义替换哦~
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
-  </code>
-</pre>
-
-<h2 id="单页面配置"><a href="#单页面配置" class="headerlink" title="单页面配置"></a>单页面配置</h2><h3 id="番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07b2gyx60j31090jjahj.jpg" alt=""></p>
-<pre>
-  <code>
-layout: bangumi
-title: bangumi
-comments: false
-date: 2019-02-10 21:32:48
-keywords:
-description:
-bangumis:
-  # 番组图片
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-  # 番组名
-    title: 朝花夕誓——于离别之朝束起约定之花
-  # 追番状态 （追番ing/已追完）
-    status: 已追完
-  # 追番进度
-    progress: 100
-  # 番剧日文名称
-    jp: さよならの朝に約束の花をかざろう
-  # 放送时间
-    time: 放送时间: 2018-02-24 SUN.
-  # 番剧介绍
-    desc:  住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
-  - img: https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg
-    title: 朝花夕誓——于离别之朝束起约定之花
-    status: 已追完
-    progress: 50
-    jp: さよならの朝に約束の花をかざろう
-    time: 放送时间: 2018-02-24 SUN.
-    desc: 住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
-  </code>
-</pre>
-
-<h3 id="友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b39tleej31080jhjv1.jpg" alt=""></p>
-<pre>
-  <code>
-layout: links
-title: links
-# 创建日期，可以改下
-date: 2018-12-19 23:11:06 
-# 图片上的标题，自定义修改
-keywords: 友人帐 
-description: 
-# true/false 开启/关闭评论
-comments: true 
-# 页面头部图片，自定义修改
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg 
-# 友链配置
-links: 
-  # 类型分组
-  - group: 个人项目
-    # 类型简介
-    desc: 充分说明这家伙是条咸鱼 < (￣︶￣)>
-    items:
-    # 友链链接
-    - url: https://shino.cc/fgvf
-    # 友链头像
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-    # 友链站点名
-      name: Google
-    # 友链介绍  下面雷同
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-  # 类型分组...
-  - group: 小伙伴们
-    desc: 欢迎交换友链 ꉂ(ˊᗜˋ)
-    items:
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
-  </code>
-</pre>
-
-<h2 id="写文章配置"><a href="#写文章配置" class="headerlink" title="写文章配置"></a>写文章配置</h2><p>主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% bili video_id [page] %&#125;</div></pre></td></tr></table></figure>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-bili/blob/master/README-zh_cn.md" target="_blank" rel="external">hexo-tag-bili</a>。</p>
-<p>hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% fb_img src [caption] %&#125;</div></pre></td></tr></table></figure>
-<p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md" target="_blank" rel="external">hexo-tag-fancybox_img</a></p>
-<h2 id="还有啥，一时想不起来……"><a href="#还有啥，一时想不起来……" class="headerlink" title="还有啥，一时想不起来……"></a>还有啥，一时想不起来……</h2><p>To be continued…</p>
-
+          <p><a href="https://ac.nowcoder.com/acm/contest/998/D" target="_blank" rel="external">题目链接</a></p>
+<h1 id="费解的开关"><a href="#费解的开关" class="headerlink" title="费解的开关"></a>费解的开关</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>在一个5X5的矩阵中，点击任意一个位置，该位置及其上下左右四个相邻的位置中的数字都会变化(0变1，1变0)，问能否在6步以内让01矩阵变成全1矩阵。</em><br><a id="more"></a></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="blue">1.每个位置最多点击一次。</font></p>
+<p><font size="4" color="blue">2.点击的顺序不会影响最终的结果</font></p>
+<p><font size="4" color="blue">3.固定第一行，当第i行的位置是0时，只能点击第i+1行的位置，改变第i行的位置只能通过改变第i+1行的位置来改变第i行的位置</font></p>
+<p><font size="4" color="red">第一行枚举可以用位运算的方式枚举</font></p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">#define rep(i,a,b) for(int i=(a);i&lt;=(b);++i)</div><div class="line">using namespace std;</div><div class="line">char ch;</div><div class="line">int a[10][10],t[10][10];</div><div class="line">bool Check()  //全亮true，否则false</div><div class="line">&#123;</div><div class="line">    rep(i,1,5)</div><div class="line">        rep(j,1,5)</div><div class="line">            if(!t[i][j]) return false;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line">void Change(int x,int y)</div><div class="line">&#123;</div><div class="line">    t[x][y]^=1;   //本身</div><div class="line">    t[x-1][y]^=1;  //左</div><div class="line">    t[x][y-1]^=1;  //上</div><div class="line">    t[x+1][y]^=1;  //右</div><div class="line">    t[x][y+1]^=1;  //下</div><div class="line">&#125;</div><div class="line">void work()</div><div class="line">&#123;</div><div class="line">    int ans=0x3f3f3f3f;</div><div class="line">    rep(i,1,1&lt;&lt;5)&#123;  //枚举第一行所有状态，第i位是0不用按</div><div class="line">        int tm=0;</div><div class="line">        rep(j,1,5)</div><div class="line">            rep(k,1,5)</div><div class="line">                t[j][k]=a[j][k];</div><div class="line">        rep(j,1,5)</div><div class="line">            if(i&gt;&gt;(j-1)&amp;1)  //C++里面从第0位开始,或者写成 i&gt;&gt;(j-1)&amp;0==0</div><div class="line">            &#123;</div><div class="line">                Change(1,j);</div><div class="line">                tm++;</div><div class="line">            &#125;</div><div class="line">        rep(j,1,4)  //控制第i+1行</div><div class="line">            rep(k,1,5)</div><div class="line">                if(!t[j][k])</div><div class="line">                &#123;</div><div class="line">                    Change(j+1,k);</div><div class="line">                    tm++;</div><div class="line">                &#125;</div><div class="line">        if(Check()) ans=min(ans,tm);</div><div class="line">    &#125;</div><div class="line">    if(ans&gt;6) puts(&quot;-1&quot;);</div><div class="line">    else printf(&quot;%d\n&quot;,ans);</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int t;</div><div class="line">    scanf(&quot;%d&quot;,&amp;t);</div><div class="line">    while(t--)</div><div class="line">    &#123;</div><div class="line">        getchar();</div><div class="line">        rep(i,1,5)&#123;</div><div class="line">            rep(j,1,5)&#123;</div><div class="line">                scanf(&quot;%c&quot;,&amp;ch);</div><div class="line">                a[i][j]=ch-48;</div><div class="line">            &#125;</div><div class="line">            getchar();</div><div class="line">        &#125;</div><div class="line">        work();</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/998/E" target="_blank" rel="external">题目链接</a></p>
+<h1 id="Strange-Towers-of-Hanoi"><a href="#Strange-Towers-of-Hanoi" class="headerlink" title="Strange Towers of Hanoi"></a>Strange Towers of Hanoi</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>解出n个盘子4座塔的汉诺塔问题最少需要多少步？</em><br><!--more--></p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="green">关于三座汉诺塔问题的最少步骤，有d[n]=2*d[n-1]+1。就是说把前n-1个盘子从A柱移动到B柱，然后把第n个盘子从A柱移动到C柱，最后把前n-1个盘子从B柱移动到C柱</font></p>
+<p><font color="red" size="4">dp[n]=min{[2*dp[i]+d[n-i]}(1&lt;=i&lt;=n)</font></p>
+<p><font color="green" size="4">dp[1]=1表示先把第i个盘子在四塔模式下移动到B柱，然后把n-i个盘子在3塔模式下移动到D柱，最后把i个盘子在四塔模式下移动到D柱，考虑所有可能的i取最小值</font></p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#define rep(i,a,b) for(int i=(a);i&lt;=(b);++i)</div><div class="line">using namespace std;</div><div class="line">int dist[20],dp[20];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    dist[1]=1;</div><div class="line">    rep(i,1,12) dist[i]=dist[i-1]*2+1;</div><div class="line">    memset(dp,0x3f,sizeof dp);</div><div class="line">    dp[1]=1;</div><div class="line">    rep(i,2,12)</div><div class="line">        rep(j,1,i-1)</div><div class="line">            dp[i]=min(dp[i],dist[i-j]+2*dp[j]);</div><div class="line">    rep(i,1,12) printf(&quot;%d\n&quot;,dp[i]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -808,22 +477,39 @@ links:
       <section class="post-squares nextprev">
         
           
-            <div class="post-nepre full previous">
+            <div class="post-nepre half previous">
           
-            <a href="/2020/06/01/递归与递推/" rel="prev">
+            <a href="/2020/06/29/递归/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/LanQiao/%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/LanQiao/%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92.jpg">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/dg.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/dg.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                递归与递推</h3>
+                递归</h3>
                 <hr>
               </div>
             </a>
           </div>
         
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/非递归实现组合型枚举/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/fdg.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/fdg.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                非递归实现组合型枚举</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
         
       </section>
       
@@ -932,7 +618,7 @@ links:
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -944,10 +630,10 @@ links:
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -1021,7 +707,7 @@ links:
       <a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
       </p>
       <span style="color: #ff9999;">
-        蜀ICP备19025261号          
+       <!-- 蜀ICP备19025261号  -->        
       </span>
     </div>
 

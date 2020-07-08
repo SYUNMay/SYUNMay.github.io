@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">music | Edviv</title>
+  <title itemprop="name">DFS &amp;&amp; BFS | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,67 +371,252 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/ss.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/ss.jpg">
     </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      DFS && BFS</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
       
-<meting-js server="netease" type="playlist" id="2736962587" mutex="true">
-</meting-js>
-
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
-
-      <!-- .entry-content -->
+        <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+	        <i class="fa fa-keyboard-o"></i>
+	        <span class="post-meta-item-text">  字数统计: </span>
+	        <!-- 安装插件npm install hexo-wordcount --save -->
+	        <span class="post-count">1.7k字</span>
+	    </span>
+	</span>
+	
+	<span class="post-time">
+	      &nbsp; | &nbsp;
+	    <span class="post-meta-item-icon">
+	        <i class="fa fa-hourglass-half"></i>
+	        <span class="post-meta-item-text">  阅读时长: </span>
+	        <span class="post-count">8分</span>
+	    </span>
+	</span>
+</div>
       
+      <!-- 添加完成 -->
+    </header>
+  </div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>搜索就是通过不停的试探去寻找一种解法。基础：暴力搜索法，深搜和广搜三种<br>高级的有IDDFS,DBFS,A<em>,IDA</em>等等，本蒻今天讲DFS &amp;&amp; BFS。</p>
+<h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><a id="more"></a>
+<h2 id="算法过程-DFS-状态-A"><a href="#算法过程-DFS-状态-A" class="headerlink" title="算法过程 DFS(状态 A)"></a>算法过程 DFS(状态 A)</h2><h3 id="1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"><a href="#1-判断当前状态是否合法。合法则继续执行，否则回到上一次调用。" class="headerlink" title="1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。"></a>1.判断当前状态是否合法。合法则继续执行，否则回到上一次调用。</h3><h3 id="2-调用DFS-状态A-t-即先走下一层。"><a href="#2-调用DFS-状态A-t-即先走下一层。" class="headerlink" title="2.调用DFS(状态A+t) 即先走下一层。"></a>2.调用DFS(状态A+t) 即先走下一层。</h3><h2 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h2><p><a href="http://codeforces.com/gym/102394/problem/F" target="_blank" rel="external">CCPC2019哈尔滨站</a></p>
+<h3 id="题面描述"><a href="#题面描述" class="headerlink" title="题面描述"></a><font size="5">题面描述</font></h3><p> 六个字符串，从每个字符串中取出一个字符，问能否构成”harbin”？如果能构<br> 则输出”Yes”,否则输出”No”。</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h3><p>  多组测试，第一个数字 T 代表测试组数<br>  每组测试输入6个字符串<br>  所有字符串长度之和不超过 2e6</p>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h3><p>  每组测试输出”Yes”或”No”。</p>
+<h3 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">char s[2002000];</div><div class="line">bool mp[7][7];</div><div class="line">bool a[7];</div><div class="line">bool dfs(int p)</div><div class="line">&#123;</div><div class="line">    if(p == 7) return true;</div><div class="line">    for(int i = 1; i &lt;= 6; ++i)</div><div class="line">    &#123;</div><div class="line">        if(mp[p][i] &amp;&amp; a[i])</div><div class="line">        &#123;</div><div class="line">            a[i] = 0;</div><div class="line">            if(dfs(p + 1)) return true;</div><div class="line">            a[i] = 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int T;</div><div class="line">    scanf(&quot;%d&quot;,&amp;T);</div><div class="line">    while(T--)</div><div class="line">    &#123;</div><div class="line">        memset(mp,0,sizeof(mp));</div><div class="line">        memset(a,1,sizeof(a));</div><div class="line">        for(int i = 1; i &lt;= 6; ++i)</div><div class="line">        &#123;</div><div class="line">            scanf(&quot;%s&quot;,s);</div><div class="line">            int len = strlen(s);</div><div class="line">            for(int j = 0; j &lt; len; ++j)</div><div class="line">                if(s[j] == &apos;h&apos;) mp[i][1] = 1;</div><div class="line">                else if(s[j] == &apos;a&apos;) mp[i][2] = 1;</div><div class="line">                else if(s[j] == &apos;r&apos;) mp[i][3] = 1;</div><div class="line">                else if(s[j] == &apos;b&apos;) mp[i][4] = 1;</div><div class="line">                else if(s[j] == &apos;i&apos;) mp[i][5] = 1;</div><div class="line">                else if(s[j] == &apos;n&apos;) mp[i][6] = 1;</div><div class="line">        &#125;</div><div class="line">        if(dfs(1)) printf(&quot;Yes\n&quot;);</div><div class="line">        else printf(&quot;No\n&quot;);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h2><h3 id="题面描述-简单版本"><a href="#题面描述-简单版本" class="headerlink" title="题面描述(简单版本)"></a><font size="5">题面描述(简单版本)</font></h3><p> 有一个 n行m列 的网格，每个格子里非 0 即 1，有 q 次操作，每次<br> 给定一个以(x1,y1)为左上角，(x2,y2)为右下角的矩形内所有格子里<br> 的数字都变成1。问每次操作之后，所有数字为 1 的格子构成的四连通<br> 块的个数。</p>
+<h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h3><p>输入第一行两个整数 n,m(1 &lt;= n,m &lt;= 300),表示网格的大小。<br>接下来 n 行，每行一个长为 m 的 01串，表示初始网格大小。<br>接下来一行一个整数 q, 表示操作个数。<br>接下来 q 行，每行四个整数 x1, y1, x2, y2(1&lt;=x1&lt;=x2&lt;=n,1&lt;=y1&lt;=y2&lt;=m)<br>表示把以(x1,y1)为左上角，(x2,y2)为右下角的矩形中的元素都变为1。</p>
+<h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h3><p>输出共 q 行，每行一个整数，表示每次操作后含有数字1的格子构成的四连通块个数</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><font size="5">样例输入</font></h3><p>5 6<br>101010<br>000001<br>101010<br>000001<br>101010<br>3<br>1 2 5 2<br>4 4 4 4<br>1 3 3 6</p>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><font size="5">样例输出</font></h3><p>6<br>7<br>2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 350;</div><div class="line">char mp[maxn][maxn],flag[maxn][maxn];</div><div class="line">int head[4][2]=&#123;&#123;0,-1&#125;,&#123;1,0&#125;,&#123;0,1&#125;,&#123;-1,0&#125;&#125;;</div><div class="line">int n, m ,q, ans;</div><div class="line"></div><div class="line">bool inbound(int x, int y)</div><div class="line">&#123;</div><div class="line">    if(x&gt;=1 &amp;&amp; x &lt;= n &amp;&amp; y&gt;=1 &amp;&amp; y&lt;=m)</div><div class="line">        return true;</div><div class="line">    return false;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs(int x,int y)</div><div class="line">&#123;</div><div class="line">    mp[x][y] = &apos;0&apos;;</div><div class="line">    for(int i = 0; i &lt; 4; i++)</div><div class="line">    &#123;</div><div class="line">        int dx = x + head[i][0];</div><div class="line">        int dy = y + head[i][1];</div><div class="line">        if(mp[dx][dy]==&apos;1&apos; &amp;&amp; inbound(dx,dy))</div><div class="line">        &#123;</div><div class="line">            mp[dx][dy] = &apos;0&apos;;</div><div class="line">            dfs(dx,dy);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	cin&gt;&gt;n&gt;&gt;m;</div><div class="line">	for(int i = 1; i &lt;= n; i++)</div><div class="line">	    for(int j = 1; j &lt;= m; j++)</div><div class="line">	        cin&gt;&gt;mp[i][j];</div><div class="line">	cin&gt;&gt;q;</div><div class="line">	while(q--)</div><div class="line">	&#123;</div><div class="line">	    ans = 0;</div><div class="line">		int x1, y1, x2, y2;</div><div class="line">		cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;</div><div class="line">		for(int i = x1; i &lt;= x2; i++)</div><div class="line">            for(int j = y1; j &lt;= y2; j++)</div><div class="line">                mp[i][j] = &apos;1&apos;;</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">            for(int j = 1; j &lt;= m; j++)</div><div class="line">                flag[i][j]=mp[i][j];</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">	        for(int j = 1; j &lt;= m; j++)</div><div class="line">	        &#123;</div><div class="line">	            if(mp[i][j] == &apos;1&apos;)</div><div class="line">                &#123;</div><div class="line">                    ans++;</div><div class="line">                    dfs(i,j);</div><div class="line">                &#125;</div><div class="line">	        &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">            for(int j = 1; j &lt;= m; j++)</div><div class="line">                mp[i][j]=flag[i][j];</div><div class="line">        printf(&quot;%d\n&quot;,ans);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><h2 id="算法过程-广度优先搜索"><a href="#算法过程-广度优先搜索" class="headerlink" title="算法过程(广度优先搜索)"></a>算法过程(广度优先搜索)</h2><h3 id="1-一层一层的走"><a href="#1-一层一层的走" class="headerlink" title="1.一层一层的走"></a>1.一层一层的走</h3><h3 id="2-广搜总是每次都把离上一状态最近的状态用一个队列记录下来"><a href="#2-广搜总是每次都把离上一状态最近的状态用一个队列记录下来" class="headerlink" title="2.广搜总是每次都把离上一状态最近的状态用一个队列记录下来"></a>2.广搜总是每次都把离上一状态最近的状态用一个队列记录下来</h3><h3 id="3-记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并"><a href="#3-记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并" class="headerlink" title="3.记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并"></a>3.记录之后，检查队列是否为空，如果不为空，就将队列元素弹出，并</h3><p>且以这个状态为”根节点”进行广度优先搜索。</p>
+<h3 id="4-直到整个队列为空。"><a href="#4-直到整个队列为空。" class="headerlink" title="4.直到整个队列为空。"></a>4.直到整个队列为空。</h3><h2 id="习题三-走迷宫-Bfs"><a href="#习题三-走迷宫-Bfs" class="headerlink" title="习题三 走迷宫(Bfs)"></a>习题三 走迷宫(Bfs)</h2><h3 id="题面描述-1"><a href="#题面描述-1" class="headerlink" title="题面描述"></a><font size="5">题面描述</font></h3><p> 一个 n行 m 列的迷宫，迷宫的格子里分别放 0 和 1，1 表示可以通过，0表<br> 示不可以通过。<br> 从某个点开始，有四个方向可以走，前进方格中的数字为 1 时表示可以通过，<br> 0表示不可通过，要另找路径。<br> 起点是左上角，输入终点坐标，给出最短路径。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a><font size="5">输入</font></h3><p>6 5 6 5<br>1 0 0 0 0<br>1 1 1 1 1<br>0 0 0 0 1<br>1 1 1 1 1<br>1 0 0 0 0<br>1 1 1 1 1</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a><font size="5">输出</font></h3><p>17<br>(11)(21)-&gt;(22)-&gt;(23)-&gt;(24)-&gt;(25)-&gt;(35)-&gt;(45)-&gt;(44)-&gt;(43)-&gt;(42)-&gt;(41)-&gt;(51)-&gt;(61)-&gt;(62)-&gt;(63)-&gt;(64)-&gt;(65)-&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int n,m,tx,ty;</div><div class="line">int mp[110][110];</div><div class="line">int qu[10010];  //模拟队列，存所有的点</div><div class="line">int l,r;    //[l,r)</div><div class="line">int dis[110][110];  //dis[][]表示这个点是否被访问过</div><div class="line">int pre[10010];  //pre[]记录方案</div><div class="line">int dir[4][2] = &#123;1, 0, 0, 1, -1, 0, 0, -1&#125;;</div><div class="line">bool inbound(int x, int l, int r)</div><div class="line">&#123;</div><div class="line">    if(x &lt; l || x &gt;= r)</div><div class="line">        return false;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void write(int s,int x)</div><div class="line">&#123;</div><div class="line">    if(s == x)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;(%d%d)&quot;,s/m+1,s%m+1);</div><div class="line">        return ;</div><div class="line">    &#125;</div><div class="line">    write(s,pre[x]);</div><div class="line">    printf(&quot;(%d%d)-&gt;&quot;,x/m+1,x%m+1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void bfs(int s, int t)</div><div class="line">&#123;</div><div class="line">    memset(dis,-1,sizeof(dis));</div><div class="line">    memset(qu,0,sizeof(qu));</div><div class="line">    l = 0; r = 0;</div><div class="line">    qu[0] = s;  //起点存入队列</div><div class="line">    r++;   //保证区间左闭右开</div><div class="line">    dis[s/m][s%m] = 0;</div><div class="line">    while(l &lt; r)</div><div class="line">    &#123;</div><div class="line">        int point = qu[l];  //取出队首元素</div><div class="line">        if(point == t) break;   //到达终点，提前退出</div><div class="line">        l++;  //出队</div><div class="line">        int x = point/m, y = point%m;  //点的位置</div><div class="line">        for(int i = 0; i &lt; 4; i++)   //四个方向扩展</div><div class="line">        &#123;</div><div class="line">            int tx = x + dir[i][0];</div><div class="line">            int ty = y + dir[i][1];</div><div class="line">            if(!inbound(tx,0,n)||!inbound(ty,0,m))</div><div class="line">                continue;</div><div class="line">            if(dis[tx][ty] == -1 &amp;&amp; mp[tx][ty] == 1)</div><div class="line">            &#123;</div><div class="line">                dis[tx][ty] = dis[x][y] + 1;  //(x,y)--&gt;(tx,ty)</div><div class="line">                pre[tx*m+ty] = point; //记录前驱</div><div class="line">                qu[r] = tx*m+ty;  //放入队列</div><div class="line">                r++;   //进队</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,dis[t/m][t%m]);</div><div class="line">    write(s,t);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d%d&quot;, &amp;n,&amp;m);</div><div class="line">    scanf(&quot; %d%d&quot;, &amp;tx,&amp;ty);</div><div class="line">    for(int i = 0; i &lt; n; i++)</div><div class="line">        for(int j = 0; j &lt; m; j++)</div><div class="line">            scanf(&quot; %d&quot;, &amp;mp[i][j]);</div><div class="line">    tx--;ty--;</div><div class="line">    bfs(0 ,tx*m+ty);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><em>搜索解决问题：</em><br>在一个空间中寻找目标<br>空间指的是解空间<br>目标是指目标状态<br>解空间：如果把一个问题的抽象成一个数学上的向量，那么包含这个向量<br>空间，也就是解空间。<br>状态：用于描述问题或问题解的一些向量。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/快速幂/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/ksm.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/ksm.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                快速幂</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/线性Dp/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/xxdp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/xxdp.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                线性Dp</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

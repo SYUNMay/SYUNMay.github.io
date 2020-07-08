@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">music | Edviv</title>
+  <title itemprop="name">线性Dp | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,67 +371,284 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/xxdp.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/xxdp.jpg">
     </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      线性Dp</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
       
-<meting-js server="netease" type="playlist" id="2736962587" mutex="true">
-</meting-js>
-
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
-
-      <!-- .entry-content -->
+        <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+	        <i class="fa fa-keyboard-o"></i>
+	        <span class="post-meta-item-text">  字数统计: </span>
+	        <!-- 安装插件npm install hexo-wordcount --save -->
+	        <span class="post-count">2.6k字</span>
+	    </span>
+	</span>
+	
+	<span class="post-time">
+	      &nbsp; | &nbsp;
+	    <span class="post-meta-item-icon">
+	        <i class="fa fa-hourglass-half"></i>
+	        <span class="post-meta-item-text">  阅读时长: </span>
+	        <span class="post-count">12分</span>
+	    </span>
+	</span>
+</div>
       
+      <!-- 添加完成 -->
+    </header>
+  </div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h1><p><a href="https://vjudge.net/problem/POJ-1163" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>给定一个如下图所示的数字三角形，从顶部出发，在每一结点可以选择移动至其左下方的结点或移动至其右下方的结点，一直走到底层，要求找出一条路径，使路径上的数字的和最大。<br>        7<br>      3   8<br>    8   1   0<br>  2   7   4   4<br>4   5   2   6   5<br><a id="more"></a></p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>第一行包含整数n，表示数字三角形的层数。<br>接下来n行，每行包含若干整数，其中第 i<br>行表示数字三角形第 i 层包含的整数。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出一个整数，表示最大的路径数字和。</p>
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤n≤500,<br>−10000≤三角形中的整数≤10000</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>5<br>7<br>3 8<br>8 1 0<br>2 7 4 4<br>4 5 2 6 5</p>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>30</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">dp[i][j]:</font><font size="4" color="Blue">表示从顶层到达第i层第j个位置的最大的得分值</font></p>
+<p><font size="4" color="blue">第 i 层第 j 个位置可以由第 i - 1层的第 j 个位置或者第 i - 1 层的第 j - 1 个位置走过来</font></p>
+<p><font size="4" color="red">状态转移方程:dp[i][j]=max(dp[i-1][j],dp[i-1][j-1]+a[i][j])</font></p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">using namespace std;</div><div class="line">typedef long long ll;</div><div class="line">const int maxn=1e3+7;</div><div class="line">ll dp[maxn][maxn];</div><div class="line">int n,a[maxn][maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">        for(int j=1;j&lt;=i;++j)</div><div class="line">            scanf(&quot;%d&quot;,&amp;a[i][j]);</div><div class="line">    </div><div class="line">    for(int i=0;i&lt;=n;++i)</div><div class="line">        for(int j=0;j&lt;=i+1;++j)</div><div class="line">            dp[i][j]=-1e9;</div><div class="line">            </div><div class="line">    dp[1][1]=a[1][1];        </div><div class="line">    for(int i=2;i&lt;=n;++i)</div><div class="line">        for(int j=1;j&lt;=i;++j)</div><div class="line">            dp[i][j]=max(dp[i-1][j],dp[i-1][j-1])+a[i][j];</div><div class="line">    ll ans=0;</div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">            ans=max(ans,dp[n][i]);</div><div class="line">    printf(&quot;%lld\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="最长上升子序列-LIS"><a href="#最长上升子序列-LIS" class="headerlink" title="最长上升子序列(LIS)"></a>最长上升子序列(LIS)</h1><p><a href="https://vjudge.net/problem/HDU-1257" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>给定一个长度为N的数列，求数值严格单调递增的子序列的长度最长是多少。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>第一行包含整数N。<br>第二行包含N个整数，表示完整序列。</p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出一个整数，表示最大长度。</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">dp[i]:</font><font size="4" color="blue">表示以第 i 个数结尾的最长上升子序列的长度</font></p>
+<p><font size="4" color="red">状态转移方程: dp[i]=max(0,dp[j]+1)</font></p>
+<p><font size="4" color="red">最后答案:max(dp[i]),时间复杂度O(n^2)</font></p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">typedef long long ll;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int n,dp[maxn],a[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(~scanf(&quot;%d&quot;,&amp;n))</div><div class="line">    &#123;</div><div class="line">        memset(dp,0,sizeof(dp));</div><div class="line">        for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    </div><div class="line">        for(int i=1;i&lt;=n;++i)</div><div class="line">        &#123;</div><div class="line">            dp[i]=1;</div><div class="line">            for(int j=1;j&lt;i;++j)</div><div class="line">            &#123;</div><div class="line">                if(a[j]&lt;a[i]&amp;&amp;dp[i]&lt;dp[j]+1)</div><div class="line">                    dp[i]=dp[j]+1;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        int ans=0;</div><div class="line">        for(int i=1;i&lt;=n;++i)</div><div class="line">            if(dp[i]&gt;ans) ans=dp[i];</div><div class="line">        printf(&quot;%d\n&quot;,ans);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="输出LIS的记录方案"><a href="#输出LIS的记录方案" class="headerlink" title="输出LIS的记录方案"></a><font size="5">输出LIS的记录方案</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">typedef long long ll;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int n,dp[maxn],a[maxn];</div><div class="line">int g[maxn],t[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        dp[i]=1;</div><div class="line">        for(int j=1;j&lt;i;++j)</div><div class="line">        &#123;</div><div class="line">            if(a[j]&lt;a[i]&amp;&amp;dp[i]&lt;dp[j]+1)</div><div class="line">            &#123;</div><div class="line">                dp[i]=dp[j]+1;</div><div class="line">                g[i]=j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    int k=1;</div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">        if(dp[i]&gt;dp[k]) k=i;</div><div class="line">    printf(&quot;%d\n&quot;,dp[k]);</div><div class="line"></div><div class="line">    int L=dp[k];</div><div class="line">    for(int i=0,len=dp[k];i&lt;len;++i) t[i]=a[k],k=g[k];</div><div class="line"></div><div class="line">    for(int i=L-1;i&gt;=0;--i) printf(&quot;%d &quot;,t[i]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二分优化"><a href="#二分优化" class="headerlink" title="二分优化"></a><font size="5">二分优化</font></h2><p><font size="4" color="Blue">定义数组 d[]; len用于统计 d[] 内的数据个数; high[]原始序列</font></p>
+<p><font size="4" color="Blue">初始化: d[1]=high[1]; len=1</font></p>
+<p><font size="4" color="red">操作步骤:</font></p>
+<p><font size="4" color="Blue">逐步处理原数组中的数字，如果当前数字比上一个数字大，那么我们就把这个数字接在上一个数字后面，否则我们就把这个数字接在 d[] 数组中第一个大于它的数字后面。二分查找时间复杂度 O(logn) </font></p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int n,high[maxn];</div><div class="line">using namespace std;</div><div class="line">int LIS()</div><div class="line">&#123;</div><div class="line">    int len=1;</div><div class="line">    int d[maxn];</div><div class="line">    d[1]=high[1];</div><div class="line">    for(int i=2;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        if(high[i]&gt;d[len]) d[++len]=high[i];</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            int j=lower_bound(d+1,d+len+1,high[i])-d;</div><div class="line">            d[j]=high[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return len;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(~scanf(&quot; %d&quot;,&amp;n))</div><div class="line">    &#123;</div><div class="line">        for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;high[i]);</div><div class="line">        printf(&quot;%d\n&quot;,LIS());</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二分写法"><a href="#二分写法" class="headerlink" title="二分写法"></a><font size="5">二分写法</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">using namespace std;</div><div class="line">const int N=0x3f3f3f3f;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int a[maxn],q[maxn];  //q[i] 存储上升子序列结尾的最小的值</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int len=0,n;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line"></div><div class="line">    q[0]=-N;</div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        int l=0,r=len;</div><div class="line">        while(l&lt;r)</div><div class="line">        &#123;</div><div class="line">            int mid=(l+r)&gt;&gt;1;</div><div class="line">            if(q[mid]&lt;a[i]) l=mid+1;</div><div class="line">            else r=mid;</div><div class="line">        &#125;</div><div class="line">        if(q[r]&lt;a[i]) q[++len]=a[i];</div><div class="line">        else q[r]=a[i];</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,len);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">using namespace std;</div><div class="line">const int N=0x3f3f3f3f;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int a[maxn],q[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int len=0,n;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=0;i&lt;n;++i) scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    </div><div class="line">    q[0]=-N;</div><div class="line">    for(int i=0;i&lt;n;++i)</div><div class="line">    &#123;</div><div class="line">        int l=0,r=len;</div><div class="line">        while(l&lt;r)</div><div class="line">        &#123;</div><div class="line">            int mid=(l+r+1)&gt;&gt;1;</div><div class="line">            if(q[mid]&lt;a[i]) l=mid;</div><div class="line">            else r=mid-1;</div><div class="line">        &#125;</div><div class="line">        len=max(len,r+1);</div><div class="line">        q[r+1]=a[i];</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,len);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="最长公共子序列-LCS"><a href="#最长公共子序列-LCS" class="headerlink" title="最长公共子序列(LCS)"></a>最长公共子序列(LCS)</h1><p><a href="https://vjudge.net/problem/HDU-1159" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>给定两个长度分别为N和M的字符串A和B，求既是A的子序列又是B的子序列的字符串长度最长是多少。</p>
+<h2 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>输入多组数据。<br>每行输入两个字符串A,B。<br>字符串均由小写字母构成。</p>
+<h2 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出一个整数，表示最大长度。</p>
+<h2 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤N≤1000</p>
+<h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">dp[i][j]:</font><font size="4" color="blue">表示在第一个序列的前 i 个字母中出现过，且在第二个序列的前 j 个字母中出现过的子序列</font><br><img src="http://edviv.gitee.io/images_bed/images/ACM/8Hthvj1.png" alt=""></p>
+<h2 id="AC代码-3"><a href="#AC代码-3" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line">#define rep(i,a,b) for(auto i=(a);i&lt;=(b);++i)</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int n,m;</div><div class="line">char a[maxn],b[maxn];</div><div class="line">int dp[maxn][maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(~scanf(&quot; %s %s&quot;,a+1,b+1))</div><div class="line">    &#123;</div><div class="line">        memset(dp,0,sizeof(dp));</div><div class="line">        n=strlen(a+1);</div><div class="line">        m=strlen(b+1);</div><div class="line"></div><div class="line">        rep(i,1,n)</div><div class="line">        &#123;</div><div class="line">            rep(j,1,m)</div><div class="line">            &#123;</div><div class="line">                dp[i][j]=max(dp[i-1][j],dp[i][j-1]);</div><div class="line">                if(a[i]==b[j]) dp[i][j]=max(dp[i][j],dp[i-1][j-1]+1);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        printf(&quot;%d\n&quot;,dp[n][m]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="最短编辑距离"><a href="#最短编辑距离" class="headerlink" title="最短编辑距离"></a>最短编辑距离</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>1.给定两个字符串A和B，现在要将A经过若干操作变为B，可进行的操作有：<br>2.删除–将字符串A中的某个字符删除。<br>3.插入–在字符串A的某个位置插入某个字符。<br>4.替换–将字符串A中的某个字符替换为另一个字符。<br>现在请你求出，将A变为B至少需要进行多少次操作。</p>
+<h2 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>第一行包含整数n，表示字符串A的长度。<br>第二行包含一个长度为n的字符串A。<br>第三行包含整数m，表示字符串B的长度。<br>第四行包含一个长度为m的字符串B。<br>字符串中均只包含大写字母。</p>
+<h2 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出一个整数，表示最少操作次数。</p>
+<h2 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤n,m≤1000</p>
+<h2 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>10<br>AGTCTGACGC<br>11<br>AGTAAGTAGGC</p>
+<h2 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>4</p>
+<h2 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><img src="http://edviv.gitee.io/images_bed/images/ACM/8H0RP02.png" alt=""></p>
+<h2 id="AC代码-4"><a href="#AC代码-4" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">char a[maxn],b[maxn];</div><div class="line">int dp[maxn][maxn];</div><div class="line">int n,m;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %d %s&quot;,&amp;n,a+1);</div><div class="line">    scanf(&quot; %d %s&quot;,&amp;m,b+1);</div><div class="line">    </div><div class="line">    for(int i=1;i&lt;=n;++i) dp[i][0]=i;</div><div class="line">    for(int i=1;i&lt;=m;++i) dp[0][i]=i;</div><div class="line">    </div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        for(int j=1;j&lt;=m;++j)</div><div class="line">        &#123;</div><div class="line">            dp[i][j]=min(dp[i-1][j]+1,dp[i][j-1]+1);</div><div class="line">            if(a[i]==b[j]) dp[i][j]=min(dp[i-1][j-1],dp[i][j]);</div><div class="line">            else dp[i][j]=min(dp[i-1][j-1]+1,dp[i][j]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,dp[n][m]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>给定n个长度不超过10的字符串以及m次询问，每次询问给出一个字符串和一个操作次数上限。<br>对于每次询问，请你求出给定的n个字符串中有多少个字符串可以在上限操作次数内经过操作变成询问给出的字符串。<br>每个对字符串进行的单个字符的插入、删除或替换算作一次操作。</p>
+<h2 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a><font size="5">输入格式</font></h2><p>第一行包含两个整数n和m。<br>接下来n行，每行包含一个字符串，表示给定的字符串。<br>再接下来m行，每行包含一个字符串和一个整数，表示一次询问。<br>字符串中只包含小写字母，且长度均不超过10。</p>
+<h2 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a><font size="5">输出格式</font></h2><p>输出共m行，每行输出一个整数作为结果，表示一次询问中满足条件的字符串个数。</p>
+<h2 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a><font size="5">数据范围</font></h2><p>1≤n,m≤1000</p>
+<h2 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a><font size="5">输入样例</font></h2><p>3 2<br>abc<br>acd<br>bcd<br>ab 1<br>acbd 2</p>
+<h2 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a><font size="5">输出样例</font></h2><p>1<br>3</p>
+<h2 id="AC代码-5"><a href="#AC代码-5" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">char a[maxn][maxn],b[maxn];</div><div class="line">int dp[maxn][maxn];</div><div class="line">int n,m;</div><div class="line">int check(char s[],char t[])</div><div class="line">&#123;</div><div class="line">    int la=strlen(s+1),lb=strlen(t+1);</div><div class="line">    for(int i=1;i&lt;=lb;++i) dp[0][i]=i;</div><div class="line">    for(int i=1;i&lt;=la;++i) dp[i][0]=i;</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=la;++i)</div><div class="line">    &#123;</div><div class="line">        for(int j=1;j&lt;=lb;++j)</div><div class="line">        &#123;</div><div class="line">            dp[i][j]=min(dp[i-1][j]+1,dp[i][j-1]+1);</div><div class="line">            if(s[i]==t[j]) dp[i][j]=min(dp[i-1][j-1],dp[i][j]);</div><div class="line">            else dp[i][j]=min(dp[i-1][j-1]+1,dp[i][j]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return dp[la][lb];</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot; %d %d&quot;,&amp;n,&amp;m);</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot; %s&quot;,a[i]+1);</div><div class="line"></div><div class="line">    int op,res=0;</div><div class="line"></div><div class="line">    while(m--)</div><div class="line">    &#123;</div><div class="line">        res=0;</div><div class="line">        scanf(&quot; %s %d&quot;,b+1,&amp;op);</div><div class="line">        for(int j=1;j&lt;=n;++j)</div><div class="line">            if(check(a[j],b)&lt;=op) res++;</div><div class="line">        printf(&quot;%d\n&quot;,res);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/搜索/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/ss.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/ss.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                DFS &amp;&amp; BFS</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/背包问题/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/bbwt.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/bbwt.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                背包问题</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

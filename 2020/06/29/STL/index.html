@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">music | Edviv</title>
+  <title itemprop="name">STL | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,67 +371,258 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/STL.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/STL.jpg">
     </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      STL</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
       
-<meting-js server="netease" type="playlist" id="2736962587" mutex="true">
-</meting-js>
-
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
-
-      <!-- .entry-content -->
+        <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+	        <i class="fa fa-keyboard-o"></i>
+	        <span class="post-meta-item-text">  字数统计: </span>
+	        <!-- 安装插件npm install hexo-wordcount --save -->
+	        <span class="post-count">1.4k字</span>
+	    </span>
+	</span>
+	
+	<span class="post-time">
+	      &nbsp; | &nbsp;
+	    <span class="post-meta-item-icon">
+	        <i class="fa fa-hourglass-half"></i>
+	        <span class="post-meta-item-text">  阅读时长: </span>
+	        <span class="post-count">5分</span>
+	    </span>
+	</span>
+</div>
       
+      <!-- 添加完成 -->
+    </header>
+  </div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>本篇博文应该归类于Cpp语言部分，但是我太懒了，不想去找图片，添加一些东西emmm</p>
+<h1 id="vector-动态数组-倍增思想"><a href="#vector-动态数组-倍增思想" class="headerlink" title="vector:动态数组,倍增思想"></a>vector:动态数组,倍增思想</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">包含于头文件 #include &lt;vector&gt;</div><div class="line">定义一个数组:vector&lt;Type&gt;v:Type是数据类型</div><div class="line">vector&lt;int&gt;v[N]</div><div class="line">固定的一维是N,第二维是动态的</div></pre></td></tr></table></figure>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">v.push_back(i):在尾部增加元素</div><div class="line">v.size():元素个数</div><div class="line">v.empty():判断是否位空。空返回ture,非空返回false</div><div class="line">v.insert(v.begin()+i,k):在第i个元素前面插入k</div><div class="line">v.insert(v.end(),10,5):尾部插入10个值为5的元素</div><div class="line">v.pop_back(i):删除尾部元素</div><div class="line">v.erase(v.begin()+i,v.begin()+j):删除区间[i,j)的元素</div><div class="line">v.erase(v.begin()+2):删除第三个元素</div><div class="line">v.clear():清空数组</div><div class="line">v.resize(n):数组大小变为n</div><div class="line">reverse(v.begin(),v.end()):翻转数组</div><div class="line">sort(v.begin(),v.end()):从小到大排序</div><div class="line">[]</div><div class="line">支持比较运算,按字典序</div></pre></td></tr></table></figure>
+<h1 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pair&lt;Type,type&gt; P,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">P.first:取第一个元素</div><div class="line">P.second:取第二个元素</div></pre></td></tr></table></figure>
+<h1 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string:字符串"></a>string:字符串</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">string s;</div></pre></td></tr></table></figure>
+<h2 id="常用操作-2"><a href="#常用操作-2" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s = &quot;&quot;;清空操作</div><div class="line">getline(cin,s):输入含有空格的字符串</div><div class="line">s.size()/s.length():返回字符串长度</div><div class="line">s.empty():判断是否为空</div><div class="line">s.clear():清空</div><div class="line">substr(起始下标,(子串长度)):返回子串,若省略子串长度,返回起始下标到字符串结束</div><div class="line">s_str():返回字符串所在字符数组的起始地址</div></pre></td></tr></table></figure>
+<h1 id="stack-先进后出"><a href="#stack-先进后出" class="headerlink" title="stack:先进后出"></a>stack:先进后出</h1><h2 id="定义-3"><a href="#定义-3" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">包含于头文件 #include &lt;stack&gt;</div><div class="line">定义一个栈 stack&lt;Type&gt; s,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作-3"><a href="#常用操作-3" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s.push(i)：把i加入栈顶</div><div class="line">s.top()：返回栈顶元素</div><div class="line">s.pop()：弹出栈顶元素</div><div class="line">s.size()：返回栈中的元素个数</div><div class="line">s.empty()：判断栈是否为空，空返回true,非空返回false</div></pre></td></tr></table></figure>
+<h1 id="queue：先进先出"><a href="#queue：先进先出" class="headerlink" title="queue：先进先出"></a>queue：先进先出</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">包含于头文件 #include &lt;queue&gt;</div><div class="line">定义一个队列 queue&lt;Type&gt; q,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作："><a href="#常用操作：" class="headerlink" title="常用操作："></a>常用操作：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">q.push(i):把i放进队列</div><div class="line">q.front():返回队首元素</div><div class="line">q.pop():删除队首元素</div><div class="line">q.back():返回队尾元素</div><div class="line">q.size():返回元素个数</div><div class="line">q.empty():判断队列是否为空,空返回true,非空返回false</div></pre></td></tr></table></figure>
+<h1 id="deque-双端队列"><a href="#deque-双端队列" class="headerlink" title="deque:双端队列"></a>deque:双端队列</h1><h2 id="定义-4"><a href="#定义-4" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">包含于头文件 #include &lt;deque&gt;</div><div class="line">deque&lt;Type&gt; D;</div></pre></td></tr></table></figure>
+<h2 id="常用操作-4"><a href="#常用操作-4" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">D.size():返回元素个数</div><div class="line">D.empty():判断是否为空</div><div class="line">D.clear():清空</div><div class="line">D.front():返回第一个元素</div><div class="line">D.back():返回最后一个元素</div><div class="line">D.push_back(i):在尾部插入i</div><div class="line">D.pop_back():队尾弹出最后一个数</div><div class="line">D.push_front(i):队首插入一个数i</div><div class="line">D.pop_front():队首弹出一个数</div><div class="line">D.begin():迭代器开始</div><div class="line">D.end():迭代器结束</div><div class="line">[]:随机选取</div></pre></td></tr></table></figure>
+<h1 id="priority-queue-优先级高的先出队。"><a href="#priority-queue-优先级高的先出队。" class="headerlink" title="priority_queue:优先级高的先出队。"></a>priority_queue:优先级高的先出队。</h1><h2 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">包含于头文件 #include &lt;queue&gt;</div><div class="line">定义一个优先队列 priority_queue&lt;Type&gt; p,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作-5"><a href="#常用操作-5" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">p.top():返回具有优先级高的元素值</div><div class="line">p.pop():删除最高优先级的元素</div><div class="line">p.push(i):插入新元素</div><div class="line">定义成小根堆:priority_queue&lt;Type,vector&lt;Type&gt;,greater&lt;Type&gt;&gt; Q;</div><div class="line">priority_queue&lt;Type&gt; heap; heap.push(-x);</div><div class="line">无clear()函数</div></pre></td></tr></table></figure>
+<h1 id="list-存储空间不连续-双向链表"><a href="#list-存储空间不连续-双向链表" class="headerlink" title="list:存储空间不连续,双向链表"></a>list:存储空间不连续,双向链表</h1><h2 id="定义-5"><a href="#定义-5" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vector:插入和删除操作少,随机访问元素频繁</div><div class="line">list:插入和删除频繁,随机访问少</div><div class="line">list&lt;Type&gt;L,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作-6"><a href="#常用操作-6" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">L.push_back(i):赋值</div><div class="line">L.erase(i):删除i</div></pre></td></tr></table></figure>
+<h1 id="set-集合中的元素是排好序并且只出现一次"><a href="#set-集合中的元素是排好序并且只出现一次" class="headerlink" title="set:集合中的元素是排好序并且只出现一次"></a>set:集合中的元素是排好序并且只出现一次</h1><h2 id="定义-6"><a href="#定义-6" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">访问元素的时间复杂度O(logn)</div><div class="line">set&lt;Type&gt; s,Type是数据类型</div></pre></td></tr></table></figure>
+<h2 id="常用操作-set-multiset-允许重复元素"><a href="#常用操作-set-multiset-允许重复元素" class="headerlink" title="常用操作 set/multiset(允许重复元素)"></a>常用操作 set/multiset(允许重复元素)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">s.insert(i):把i放进集合s</div><div class="line">s.erase(i):删除元素i</div><div class="line">(1):输入一个数i,删除所以i,O(k+logn),k为i的个数</div><div class="line">(2):输入一个迭代器,删除这个迭代器</div><div class="line">s.clear():清空集合s</div><div class="line">s.empty():判断是否为空,空返回true,非空返回false</div><div class="line">s.size():返回元素个数</div><div class="line">s.find(k):查找k,若没找到返回end(),找到返回指向k的迭代器</div><div class="line">s.lower_bound(k):返回一个迭代器,指向键值不小于k的第一个元素</div><div class="line">s.upper_bound():返回一个迭代器,指向键值大于k的第一个元素</div></pre></td></tr></table></figure>
+<h1 id="map-关联容器-查找的时间复杂度O-logn"><a href="#map-关联容器-查找的时间复杂度O-logn" class="headerlink" title="map:关联容器,查找的时间复杂度O(logn)"></a>map:关联容器,查找的时间复杂度O(logn)</h1><h2 id="定义-7"><a href="#定义-7" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">map&lt;string,int&gt; mp,存储string类型和int类型,第一个是key,第二个是value</div><div class="line">赋值:mp[&quot;Tom&quot;] = 15</div></pre></td></tr></table></figure>
+<h2 id="常用操作-map-multimap"><a href="#常用操作-map-multimap" class="headerlink" title="常用操作:map/multimap"></a>常用操作:map/multimap</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">insert():插入的数是pair类型</div><div class="line">find():查找一个数,不存在返回迭代器end()</div><div class="line">count():返回某一个数的个数。</div><div class="line">erase():</div><div class="line">(1):输入一个数i,删除所以i,O(k+logn),k为i的个数</div><div class="line">(2):输入一个迭代器,删除这个迭代器</div><div class="line">[]:multimap不支持此操作,O(logn)</div><div class="line">lower_bound(k):返回一个迭代器,指向键值不小于k的第一个元素</div><div class="line">upper_bound():返回一个迭代器,指向键值大于k的第一个元素</div></pre></td></tr></table></figure>
+<h1 id="set-map-multiset-multimap-基于平衡二叉树-动态维护有序序列"><a href="#set-map-multiset-multimap-基于平衡二叉树-动态维护有序序列" class="headerlink" title="set,map,multiset,multimap:基于平衡二叉树,动态维护有序序列"></a>set,map,multiset,multimap:基于平衡二叉树,动态维护有序序列</h1><h2 id="都支持的操作"><a href="#都支持的操作" class="headerlink" title="都支持的操作:"></a>都支持的操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   size():O(1)</div><div class="line">   empty():O(1)</div><div class="line">   clear()</div><div class="line">   begin()/end()</div><div class="line">   ++,--:返回前驱和后继,O(logn)</div><div class="line">undered_set,undered_map,undered_multiset,undered_multimap,哈希表</div><div class="line">和上面类似,增删改查的时间复杂度是O(1)</div><div class="line">不支持 lower_bound()/upper_bound(),迭代器++,--</div></pre></td></tr></table></figure>
+<h1 id="bitset-压位-1kb-1024b"><a href="#bitset-压位-1kb-1024b" class="headerlink" title="bitset:压位 1kb=1024b"></a>bitset:压位 1kb=1024b</h1><h2 id="定义-8"><a href="#定义-8" class="headerlink" title="定义:"></a>定义:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bitset&lt;10000&gt; s:定义长度为1万的bitset,10000b</div></pre></td></tr></table></figure>
+<h2 id="常用操作-7"><a href="#常用操作-7" class="headerlink" title="常用操作:"></a>常用操作:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">~,&amp;,|,^</div><div class="line">&gt;&gt;,&lt;&lt;</div><div class="line">==,!=</div><div class="line">[]:取某一位</div><div class="line">count():返回多少个1</div><div class="line">any():判断是否至少有一个1</div><div class="line">none():判断是否全为0</div><div class="line">set():把所有位置成1</div><div class="line">set(k,v):将第k位置成v</div><div class="line">reset():把所以位变成0</div><div class="line">flip():等价于~</div><div class="line">flip(k):把第k位按位取反</div></pre></td></tr></table></figure>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/07/08/Hexo-Theme-Sakura/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/img/startdash/sakura.md.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/img/startdash/sakura.md.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Hexo-Theme-Sakura</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/前缀和与差分/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/qzh.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/qzh.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                前缀和与差分</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

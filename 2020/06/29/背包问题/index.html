@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">music | Edviv</title>
+  <title itemprop="name">背包问题 | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,67 +371,272 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/bbwt.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/bbwt.jpg">
     </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      背包问题</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
       
-<meting-js server="netease" type="playlist" id="2736962587" mutex="true">
-</meting-js>
-
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
-
-      <!-- .entry-content -->
+        <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+	        <i class="fa fa-keyboard-o"></i>
+	        <span class="post-meta-item-text">  字数统计: </span>
+	        <!-- 安装插件npm install hexo-wordcount --save -->
+	        <span class="post-count">2.4k字</span>
+	    </span>
+	</span>
+	
+	<span class="post-time">
+	      &nbsp; | &nbsp;
+	    <span class="post-meta-item-icon">
+	        <i class="fa fa-hourglass-half"></i>
+	        <span class="post-meta-item-text">  阅读时长: </span>
+	        <span class="post-count">11分</span>
+	    </span>
+	</span>
+</div>
       
+      <!-- 添加完成 -->
+    </header>
+  </div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a href="https://ac.nowcoder.com/acm/problem/16693" target="_blank" rel="external">题目链接</a></p>
+<h1 id="装箱问题"><a href="#装箱问题" class="headerlink" title="装箱问题"></a>装箱问题</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>有一个箱子的容量是 v (0&lt;=v&lt;=20000),同时有 n 个物品(0&lt; n &lt;=30),每个物品有个体积。要求 n 个物品中，任意取若干个装入箱内，使箱子的剩余空间为最小。</em><br><a id="more"></a></p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h2><p><em>一个整数 v，表示箱子容量，一个整数 n 表示有 n 个物品，接下来 n 个整数，分别表示这 n 个物品各自的体积。</em></p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h2><p><em>一个整数，表示箱子的剩余空间。</em></p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><font size="5">样例输入</font></h2><p><em>24 6</em><br><em>8 3 12 7 9 7</em></p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><em>0</em></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">1.确定状态:dp[i][j]表示容量为i，体积为v的背包能够装的最大体积。</font></p>
+<p><font size="4" color="red">2.状态转移:<br>(1)不放当前物品 dp[i][j]=dp[i-1][j]<br>(2)放当前物品 dp[i][j]=dp[i-1][j-v[i]]+v[i]<br>dp[i][j]=max{dp[i-1][j-v[i]]+v[i]}</font></p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int v,n,value[40],dp[40][20010];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cin&gt;&gt;v&gt;&gt;n;</div><div class="line">    for(int i=1;i&lt;=n;++i) cin&gt;&gt;value[i];</div><div class="line">   </div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">        for(int j=v;j&gt;=0;j--)</div><div class="line">            if(j&gt;=value[i])</div><div class="line">                dp[i][j]=max(dp[i-1][j],dp[i-1][j-value[i]]+value[i]);</div><div class="line">            else dp[i][j]=dp[i-1][j];</div><div class="line">      </div><div class="line">    cout&lt;&lt;v-dp[n][v]&lt;&lt;&apos;\n&apos;;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Dp-一维数组"><a href="#Dp-一维数组" class="headerlink" title="Dp+一维数组"></a><font size="5">Dp+一维数组</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">int v,n,value[40],dp[20010];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cin&gt;&gt;v&gt;&gt;n;</div><div class="line">    for(int i=1;i&lt;=n;++i) cin&gt;&gt;value[i];</div><div class="line">  </div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        for(int j=v;j&gt;=value[i];--j)</div><div class="line">            dp[j]=max(dp[j],dp[j-value[i]]+value[i]);</div><div class="line">    &#125;</div><div class="line">    cout&lt;&lt;v-dp[v]&lt;&lt;&apos;\n&apos;;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>有 N 件物品和一个容量是 V 的背包。每件物品只能使用一次。第 i 件物品的体积是 v[i]，价值是 w[i]。求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大,输出最大价值。</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="5" color="red">1.确定状态:dp[i][j]表示前i个物品恰放入一个容量为j的背包可获得的最大价值。</font></p>
+<p><font size="5" color="red">2.状态转移:<br>(1)不放当前物品 dp[i][j]=dp[i-1][j];<br>(2)放当前物品   dp[i][j]=dp[i-1][j-v[i]]+w[i];<br>               dp[i][j]=max{dp[i-1][j-v[i]]+w[i]}</font></p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn = 1e3 + 7;</div><div class="line">int w[maxn],value[maxn];</div><div class="line">int n,v;</div><div class="line">int dp[maxn][maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;v))</div><div class="line">    &#123;</div><div class="line">        memset(dp,0,sizeof(dp));</div><div class="line">        for(int i = 1; i &lt;= n; i++) scanf(&quot;%d%d&quot;,&amp;w[i],&amp;value[i]);</div><div class="line">        </div><div class="line">        for(int i = 1; i &lt;= n; i++)</div><div class="line">        &#123;</div><div class="line">            for(int j = v; j &gt;= 0; j--)</div><div class="line">            &#123;</div><div class="line">                if(j &gt;= w[i])</div><div class="line">                    dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i]] + value[i]);</div><div class="line">                else</div><div class="line">                     dp[i][j] = dp[i-1][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        printf(&quot;%d\n&quot;,dp[n][v]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="就地滚动"><a href="#就地滚动" class="headerlink" title="就地滚动"></a>就地滚动</h2><p><img src="http://edviv.gitee.io/images_bed/images/ACM/3bcuss.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(int i=1;i&lt;=n;++i)</div><div class="line">    for(int j=m;j&gt;=w[i];--j)</div><div class="line">        if(f[j-w[i]]+value[i]&gt;f[j])</div><div class="line">            f[j]=f[j-w[i]]+value[i];</div></pre></td></tr></table></figure></p>
+<h1 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>在01背包的基础上每种物品可以无限使用。</p>
+<h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">1.确定状态: dp[i][j]依旧表示前 i 个物品恰放入容量为 j 的背包的最大权值。</font></p>
+<p><font size="4" color="red">2.确定状态转移方式:dp[i][j]=max(dp[i-1][j-k<em>v[i]]+k</em>w[i])(0&lt;=k*v[i]&lt;=j)</font></p>
+<p><font size="4" color="green">如果采取暴力做法，时间复杂度O(n^3)，数据超过1e3肯定T，然后我们可以采用动态规划中就地滚动的方式</font><br><img src="http://edviv.gitee.io/images_bed/images/ACM/3boIDU.jpg" alt=""></p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int n,V;</div><div class="line">int dp[maxn],v[maxn],w[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d %d&quot;,&amp;n,&amp;V);</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot;%d %d&quot;,&amp;v[i],&amp;w[i]);</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">       for(int j=v[i];j&lt;=V;++j)</div><div class="line">            if(dp[j-v[i]]+w[i]&gt;dp[j])</div><div class="line">                dp[j]=dp[j-v[i]]+w[i];</div><div class="line"></div><div class="line">    printf(&quot;%d\n&quot;,dp[V]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><em>有 N 件物品和一个容量为 v 的背包，第 i 种物品最多有 n[i] 件，每件费用是 c[i],价值是 w[i]。求解如何装可以在不超过背包的体积情况下价值总和最大。</em></p>
+<h2 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">朴素做法</font></p>
+<p><font size="4" color="blue">状态转移方程和完全背包一样。<br>dp[i][v]=max{dp[i-1][v-kc[i]]+kw<a href="0&lt;=k&lt;=n[i]">i</a>}<br>复杂度O(V(n[1]+n[2]+…+n[i]))</font></p>
+<h2 id="朴素做法代码"><a href="#朴素做法代码" class="headerlink" title="朴素做法代码"></a><font size="4">朴素做法代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int n,V;</div><div class="line">int v[maxn],w[maxn],num[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d %d&quot;,&amp;n,&amp;V);</div><div class="line">    int dp[maxn];</div><div class="line">    memset(dp,0xcf,sizeof(dp));    // -INF</div><div class="line">    dp[0]=0;</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot;%d %d %d&quot;,&amp;v[i],&amp;w[i],&amp;num[i]);</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">        for(int j=1;j&lt;=num[i];++j)</div><div class="line">            for(int k=V;k&gt;=v[i];k--)</div><div class="line">                if(dp[k-v[i]]+w[i]&gt;dp[k])</div><div class="line">                    dp[k]=dp[k-v[i]]+w[i];</div><div class="line">                   </div><div class="line">    int ans=0;</div><div class="line">    for(int j=0;j&lt;=V;++j)</div><div class="line">        ans=max(ans,dp[j]);</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二进制拆分法"><a href="#二进制拆分法" class="headerlink" title="二进制拆分法"></a><font size="5">二进制拆分法</font></h2><p><font size="4" color="blue">考虑将第 i 种物品换成若干件物品，使得原问题的第 i<br>种物品可取的每种策略–取0…n[i]件均能等价于取若干件代换以后的物品。另外，取超过n[i]件的策略必不能出现。<br>将i件物品分成若干件物品，其中每件物品有一个系数。让这些系数分别为1，2，4，…，2^(k-1),n[<br>i]-2^k+1,且k是满足n[i]-2^k+1&gt;0的最大整数。例如n[i]=13，可以拆分为1，2，4，6的四件物品。</font></p>
+<p><font size="4" color="green">将n[i]拆成1，2，4, … ,2^(k-1),N[i]-2^k+1,{k满足n[i]-2^k+1&gt;0}<br></font></p>
+<p><font size="4" color="red">(1)1+2+4+…+2^(k-1)+n[i]-2^k+1=n[i],保证了最多有n[i]个物品。</font></p>
+<p><font size="4" color="red">(2)1,2,4, … ,2^(k-1),可以凑出1到2^k-1的所有整数,<br>联系二进制的拆分可以证明</font></p>
+<p><font size="4" color="red">(3)2^k…n[i]的所有整数可以用若干个上述元素凑出。(可理解成凑n[i]-t,而n[i]<br>是上面所有数的和，t则是一个小于2^k的数，那么所有的数中去掉组成2^k的那些数剩下的就可以组成n[i]-t)</font></p>
+<h2 id="二进制拆分代码"><a href="#二进制拆分代码" class="headerlink" title="二进制拆分代码"></a><font size="5">二进制拆分代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int N,V;</div><div class="line">int v[maxn],w[maxn],num[maxn];</div><div class="line">int dp[maxn],vv[maxn],ww[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d %d&quot;,&amp;N,&amp;V);</div><div class="line">    memset(dp,0xcf,sizeof(dp));  //-INF</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=N;++i) scanf(&quot;%d %d %d&quot;,&amp;v[i],&amp;w[i],&amp;num[i]);</div><div class="line"></div><div class="line">    int total=0;</div><div class="line">    </div><div class="line">    for(int i=1;i&lt;=N;++i)</div><div class="line">    &#123;</div><div class="line">        for(int j=1;j&lt;num[i];j&lt;&lt;=1)//二进制拆分</div><div class="line">         &#123;</div><div class="line">            vv[++total]=j*v[i];//存容量</div><div class="line">            ww[total]=j*w[i];//存价值</div><div class="line">            num[i]-=j;</div><div class="line">         &#125;</div><div class="line">         if(num[i])//当num[i]&gt;0;</div><div class="line">         &#123;</div><div class="line">             vv[++total]=num[i]*v[i];</div><div class="line">             ww[total]=num[i]*w[i];</div><div class="line">         &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dp[0]=0;</div><div class="line">    for(int i=1;i&lt;total;++i)//01背包</div><div class="line">        for(int j=V;j&gt;=vv[i];--j)</div><div class="line">            if(dp[j-vv[i]]+ww[i]&gt;dp[j]) dp[j]=dp[j-vv[i]]+ww[i];</div><div class="line"></div><div class="line">    int ans=0;</div><div class="line">    for(int i=0;i&lt;=V;++i)</div><div class="line">        if(dp[i]&gt;ans) ans=dp[i];</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="二维费用的背包问题"><a href="#二维费用的背包问题" class="headerlink" title="二维费用的背包问题"></a><font size="5">二维费用的背包问题</font></h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p><font size="4" color="blue">对于每件物品，具有两种不同的费用，选择这种物品必须付出这两种代价，对于每种代价都有一个可付出的最大值(背包容量)。问怎样选择物品可以得到最大的价值。设这两种代价分别为代价1和代价2，第i件物品所需的两种代价分别是a[i],b[i]。这两种代价可付出的最大值(两种背包容量)分别为 V 和 U。物品的价值为 w[i]。</font></p>
+<h2 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a><font>解题思路</font></h2><p><font size="4" color="Blue">设dp[i][v][u]表示前i件物品付出两种代价分别为 v 和 u时，可获得的最大价值。</font></p>
+<p><font size="4" color="red">状态转移方程: dp[i][v][u]=max{dp[i-1][v][u],f[i-1][v-a[i]][u-b[i]]+w[i]}</font></p>
+<h1 id="分组背包"><a href="#分组背包" class="headerlink" title="分组背包"></a><font size="5">分组背包</font></h1><h2 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>有N件物品和一个容量为v的背包。第i件物品的费用是c[i],价值是w[i]。这些物品被划分为若干组，每组中的物品互相冲突，最多选择一件，问:将哪些物品装入背包可使这些物品的费用总和不超过背包容量且价值总和最大。</p>
+<h2 id="解题思路-5"><a href="#解题思路-5" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font color="red" size="4">1.确定状态: dp[k][v]表示前k组物品花费费用v能取得最大值。</font></p>
+<p><font color="red" size="4">2.确定状态转移方程:dp[k][v]=max{dp[k-1][v],dp[k-1][v-c[i]]+w[i]|物品i属于组k}</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(所有的组k)</div><div class="line">    for(v--&gt;0)</div><div class="line">        for(所有的i属于组k)</div><div class="line">            dp[v]=max&#123;f[v],f[v-c[i]]+w[i]&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="AC代码-3"><a href="#AC代码-3" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">using namespace std;</div><div class="line">const int maxn=1e3+7;</div><div class="line">int N,V;</div><div class="line">int v[maxn][maxn],w[maxn][maxn],num[maxn];</div><div class="line">int dp[maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    scanf(&quot;%d %d&quot;,&amp;N,&amp;V);</div><div class="line">    memset(dp,0xcf,sizeof(dp));  //-INF</div><div class="line"></div><div class="line">    for(int i=1;i&lt;=N;++i)</div><div class="line">    &#123;</div><div class="line">        scanf(&quot;%d&quot;,&amp;num[i]);</div><div class="line">        for(int j=1;j&lt;=num[i];++j)</div><div class="line">            scanf(&quot;%d %d&quot;,&amp;v[i][j],&amp;w[i][j]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dp[0]=0;</div><div class="line">    for(int i=1;i&lt;=N;++i)//01背包</div><div class="line">        for(int j=V;j&gt;=0;--j)</div><div class="line">            for(int k=1;k&lt;=num[i];++k)</div><div class="line">                if(j&gt;=v[i][k]&amp;&amp;dp[j-v[i][k]]+w[i][k]&gt;dp[j]) dp[j]=dp[j-v[i][k]]+w[i][k];</div><div class="line"></div><div class="line">    int ans=0;</div><div class="line">    for(int i=0;i&lt;=V;++i)</div><div class="line">        if(dp[i]&gt;ans) ans=dp[i];</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/线性Dp/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/xxdp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/xxdp.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                线性Dp</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/滑雪/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/hx.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/hx.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                滑雪</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

@@ -17,7 +17,7 @@
   }
   </style>
   
-  <title itemprop="name">music | Edviv</title>
+  <title itemprop="name">前缀和与差分 | Edviv</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,67 +371,268 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://edviv.gitee.io/cdn/ACM/qzh.jpg);" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/qzh.jpg">
     </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      前缀和与差分</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">留幸愉</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-6-29<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+      <!-- 开始添加字数统计-->
       
-<meting-js server="netease" type="playlist" id="2736962587" mutex="true">
-</meting-js>
-
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
-
-      <!-- .entry-content -->
+        <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+	        <i class="fa fa-keyboard-o"></i>
+	        <span class="post-meta-item-text">  字数统计: </span>
+	        <!-- 安装插件npm install hexo-wordcount --save -->
+	        <span class="post-count">1.9k字</span>
+	    </span>
+	</span>
+	
+	<span class="post-time">
+	      &nbsp; | &nbsp;
+	    <span class="post-meta-item-icon">
+	        <i class="fa fa-hourglass-half"></i>
+	        <span class="post-meta-item-text">  阅读时长: </span>
+	        <span class="post-count">8分</span>
+	    </span>
+	</span>
+</div>
       
+      <!-- 添加完成 -->
+    </header>
+  </div>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
-              <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
-            </ul>
+        
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a href="https://vjudge.net/problem/HDU-1556" target="_blank" rel="external">题目链接</a></p>
+<h1 id="涂气球"><a href="#涂气球" class="headerlink" title="涂气球"></a><font size="5">涂气球</font></h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h2><p>每个测试实例第一行为一个整数N,(N &lt;= 100000).接下来的N行，每行包括2个整数a b(1 &lt;= a &lt;= b &lt;= N)。<br>当N = 0，输入结束。</p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h2><p>每个测试实例输出一行，包括N个整数，第I个数代表第I个气球总共被涂色的次数。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><font size="5">样例输入</font></h2><p>3<br>1 1<br>2 2<br>3 3<br>3<br>1 1<br>1 2<br>1 3<br>0</p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><font size="5">样例输出</font></h2><p>1 1 1<br>3 2 1</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="Blue">差分</font>,对于区间操作,每次会把区间[L,R]之间的所有气球涂一次,那么就让a[L]++,a[r+1]–,再求一次前缀和就可以得出答案。</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">typedef long long ll;</div><div class="line">const int maxn=1e5+7;</div><div class="line">int a[maxn],b[maxn];</div><div class="line">int x,y,n;</div><div class="line">using namespace std;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    while(~scanf(&quot;%d&quot;,&amp;n)&amp;&amp;n)</div><div class="line">    &#123;</div><div class="line">        memset(a,0,sizeof(a));</div><div class="line">        for(int i=1;i&lt;=n;++i)</div><div class="line">        &#123;</div><div class="line">            scanf(&quot;%d %d&quot;,&amp;x,&amp;y);</div><div class="line">            if(x&gt;y) swap(x,y);</div><div class="line">            a[x]++;a[y+1]--;</div><div class="line">        &#125;</div><div class="line">        for(int i=1;i&lt;=n;i++)</div><div class="line">        &#123;</div><div class="line">            b[i]=b[i-1]+a[i];</div><div class="line">            if(i!=n) printf(&quot;%d &quot;,b[i]);</div><div class="line">            else printf(&quot;%d&quot;,b[i]);</div><div class="line">        &#125;</div><div class="line">        puts(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/999/A" target="_blank" rel="external">题目链接</a></p>
+<h1 id="激光炸弹"><a href="#激光炸弹" class="headerlink" title="激光炸弹"></a><font size="5">激光炸弹</font></h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>一种新型的激光炸弹，可以摧毁一个边长为R的正方形内的所有的目标。<br>现在地图上有n(N ≤ 10000)个目标，用整数Xi,Yi(其值在[0,5000])表示目标在地图上的位置，每个目标都有一个价值。<br>激光炸弹的投放是通过卫星定位的，但其有一个缺点，就是其爆破范围，即那个边长为R的正方形的边必须和x，y轴平行。<br>若目标位于爆破正方形的边上，该目标将不会被摧毁。 </p>
+<h2 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h2><p>输入文件的第一行为正整数n和正整数R，接下来的n行每行有3个正整数，分别表示 x,y ,v。</p>
+<h2 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h2><p>输出文件仅有一个正整数，表示一颗炸弹最多能炸掉地图上总价值为多少的目标(结果不会超过32767)。</p>
+<h2 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a><font size="5">样例输入</font></h2><p>2 1<br>0 0 1<br>1 1 1</p>
+<h2 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a><font size="5">样例输出</font></h2><p>1</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p>二维前缀和,sum[x][y]就等于位置(x,y)上的所有目标的价值之和。求一下sum[x][y]的二维前缀和S。</p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">#define rep(i,a,b) for(int i=(a);i&lt;=(b);++i)</div><div class="line">using namespace std;</div><div class="line">const int N=5e3+7;</div><div class="line">int sum[N][N],a[N][N];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int n,r;</div><div class="line">    scanf(&quot;%d %d&quot;,&amp;n,&amp;r);</div><div class="line">    int x,y,v,rx=r,ry=r;</div><div class="line">    while(n--)</div><div class="line">    &#123;</div><div class="line">        scanf(&quot;%d %d %d&quot;,&amp;x,&amp;y,&amp;v);</div><div class="line">        x++,y++;</div><div class="line">        a[x][y]=v;</div><div class="line">        rx=max(x,rx);</div><div class="line">        ry=max(y,ry);</div><div class="line">    &#125;</div><div class="line">    rep(i,1,rx)</div><div class="line">        rep(j,1,ry)</div><div class="line">            sum[i][j]=sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+a[i][j];</div><div class="line">    int ans=0;</div><div class="line">    rep(i,r,rx)</div><div class="line">        rep(j,r,ry)</div><div class="line">            ans=max(ans,sum[i][j]-sum[i-r][j]-sum[i][j-r]+sum[i-r][j-r]);</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/999/B" target="_blank" rel="external">题目链接</a></p>
+<h1 id="IncDec-Sequence"><a href="#IncDec-Sequence" class="headerlink" title="IncDec Sequence"></a><font size="5">IncDec Sequence</font></h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>给定一个长度为 n(n&lt;=1e5)的数列 a1, a2, …, an,每次可以选择一个区间 [l,r],使下标在这个区间内的数都加一或者都减一。<br>求至少需要多少次操作才能使数列中的所有数都一样，并求出在保证最少次数的前提下，最终得到的数列可能有多少种。</p>
+<h2 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述"></a><font size="5">输入描述</font></h2><p>第一行一个整数n<br>接下来 n 行,每行一个整数,第 i+1 行的整数表示 ai。</p>
+<h2 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述"></a><font size="5">输出描述</font></h2><p>第一行输出最少操作次数。<br>第二行输出最终能得到多少种结果。</p>
+<h2 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a><font size="5">样例输入</font></h2><p>4<br>1<br>1<br>2<br>2</p>
+<h2 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a><font size="5">样例输出</font></h2><p>1<br>2</p>
+<h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p>求出序列 a 的差分序列 b, b[1]=a[1],b[i]=a[i]-a<a href="2&lt;=i&lt;=n">i-1</a>。b[n+1]=0。题目对于序列 a 的操作,相当于每次从序列 b 中选出任意两个数,一个加 1,另一个减 1。目标把 b[2]…b[n]变为全0。最后得到的数列 a 就是由 n 个 b[1]构成。<br>从差分序列中选取任意两个数的方法可分为四类:</p>
+<p><font size="4" color="Blue">1.选取 b[i] 和 b[j] (2&lt;=i,j&lt;=n)。会改变b[2]…b[n]中两个数的值。应该在保证b[i]和b[j]一正一负的前提下,尽量采取这种操作,更快地接近目标。</font></p>
+<p><font size="4" color="Blue">2.选取b[1]和b[j] (2&lt;=j&lt;=n)</font></p>
+<p><font size="4" color="Blue">3.选取b[i]和b[n+1] (2&lt;=i&lt;=n)</font></p>
+<p><font size="4" color="Blue">4.选取b[1]和b[n+1],永远不会改变b[2]…b[n]的值,相当于浪费一次操作,一定不是最优解。</font></p>
+<p><font size="4" color="Green">设b[2],b[3]…b[n]中正数总和为p,负数总和的绝对值是q。首先用正负数配对的方式执行第1类操作,可执行min(p,q)次。剩余|p-q|个没有配对,对每个可以选择与b[1]或b[n+1]配对,就是执行第2类或第3类操作,共需|p-q|次</font></p>
+<p><font size="4" color="red">综上所述,最少操作次数就是min(p,q)+|p-q|=max(p,q)次。根据|p-q|次第2、3类操作的选择情况,能产生|p-q|+1种不同的b[1]的值,就是最后得到的序列a可能有|p-q|+1种。</font></p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#include &lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">typedef long long ll;</div><div class="line">const int N=1e5+7;</div><div class="line">int a[N],b[N];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int n;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=1;i&lt;=n;++i) scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    ll p=0,q=0;</div><div class="line">    for(int i=1;i&lt;=n;++i) </div><div class="line">    &#123;</div><div class="line">        b[i]=a[i]-a[i-1];</div><div class="line">        if(i&gt;1)</div><div class="line">        &#123;</div><div class="line">            if(b[i]&gt;0) p+=b[i];</div><div class="line">            else q-=b[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%lld\n%lld\n&quot;,max(p,q),abs(p-q)+1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://ac.nowcoder.com/acm/contest/999/C" target="_blank" rel="external">题目链接</a></p>
+<h1 id="Tallest-Cow"><a href="#Tallest-Cow" class="headerlink" title="Tallest Cow"></a><font size="5">Tallest Cow</font></h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a><font size="5">题目大意</font></h2><p>有 N 头牛站成一行。两头牛能够互相看见,当且仅当它们中间的牛身高都比它们矮。现在,我们只知道其中最高的两头牛是第p头,它的身高是 H,不知道剩余 N-1 头牛的身高。但是,我们还知道 M 对关系,每对关系都指明了某两头牛A[i]和B[i]可以互相看见。求每头牛的身高最大可能是多少。<br>数据范围: 1&lt;=N,M&lt;=1e4, 1&lt;=H&lt;=1e6。</p>
+<h2 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a><font size="5">解题思路</font></h2><p><font size="4" color="red">对一个区间的操作转化为左右两个端点的操作,</font></p>
+<h2 id="AC代码-3"><a href="#AC代码-3" class="headerlink" title="AC代码"></a><font size="5">AC代码</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#include&lt;bits/stdc++.h&gt;</div><div class="line">using namespace std;</div><div class="line">typedef long long ll;</div><div class="line">const int maxn=1e4+7;</div><div class="line">int a[maxn],b[maxn],vis[maxn][maxn];</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int n,num,h,r,x,y;</div><div class="line">    scanf(&quot;%d %d %d %d&quot;,&amp;n,&amp;num,&amp;h,&amp;r);  // n头牛,最高的牛的位置是num,身高是h,有 r 对关系</div><div class="line">    for(int i=1;i&lt;=r;++i)</div><div class="line">    &#123;</div><div class="line">        scanf(&quot;%d %d&quot;,&amp;x,&amp;y);</div><div class="line">        if(x&gt;y) swap(x,y);</div><div class="line">        if(!vis[x][y]) a[x+1]--,a[y]++;  //去除重复的关系&amp;&amp;差分</div><div class="line">        vis[x][y]=1;  //标记出现过</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;=n;++i)</div><div class="line">    &#123;</div><div class="line">        b[i]=b[i-1]+a[i];  //前缀和</div><div class="line">        printf(&quot;%d\n&quot;,b[i]+h);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://edviv.gitee.io/cdn/img/donate/AliPay%20.jpg"></li>
+                <li class="wechat-code"><img src="http://edviv.gitee.io/cdn/img/donate/WeChatPay.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+
+            
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+        
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/06/29/STL/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/STL.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/STL.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                STL</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/06/29/并查集/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://edviv.gitee.io/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://edviv.gitee.io/cdn/ACM/bcj.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://edviv.gitee.io/cdn/ACM/bcj.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                并查集</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<!-- 先引入样式,从footer提前 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
+
+<script src="../js/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    .v .vwrap{padding: 0 0 44px;}
+    .v .veditor{min-height: 10rem;
+        background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+    .v .vwrap .vedit{padding-top:20px;}
+    .v .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #fff7f7f7;}
+    .v .vinput{padding:10px 15px; text-align: center;}
+    .v .vwrap .vheader .vinput{border-bottom:0px}
+    .v .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+    .v .vwrap .vcontrol{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vwrap .vedit .vctrl span.vpreview-btn{display: none}
+    .v .vwrap .vcontrol .col.col-80{width: 100%;}
+    .v .vbtn.vsubmit{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#ff9999;}
+    .v .vlist .vcard .vhead .vsys{background: #fff7f7f7;}
+    @media screen and (max-width: 520px){
+    .v .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}
+    }
+</style>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: "K78OpazWrRxgAN7VrMJVS1rW-gzGzoHsz",
+        appKey: "JxILRdQ1Tqhe3f9UoO9JWqVi",
+        path: window.location.pathname,
+        notify: false,
+        verify: true,
+        avatar: 'monsterid',//小怪物头像
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."  
+    });
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="Edviv" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="http://edviv.gitee.io/cdn/img/startdash/Edviv.jpg" itemprop="image" alt="留幸愉" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://blog.edviv.com/" itemprop="url" rel="author">Edviv</a>
+            <a href="" itemprop="url" rel="author">留幸愉</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>你越功利，世界对你越神秘！</p>
+        <p><i class="iconfont icon-write"></i>一个爱折腾且喜欢研究算法的大学生</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
